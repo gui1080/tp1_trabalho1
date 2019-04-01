@@ -6,4 +6,10 @@ Gabriel Matheus - 17/0103498
 
 Guilherme Braga - 17/0162290
 
+# Material da matéria
+https://cic.unb.br/~fernando/matdidatico/intro.htm
+
+# Link do Github
+https://github.com/therealguib545/tp1_trabalho1
+
 # 1/2019, UnB
