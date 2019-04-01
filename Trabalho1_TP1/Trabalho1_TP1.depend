@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1554158568 source:e:\engenharia da computação\semestre 4\tp1\trab1\trabalho1_tp1\main.cpp
+	<iostream>
+	"dominios.h"
+
+1554158476 e:\engenharia da computação\semestre 4\tp1\trab1\trabalho1_tp1\dominios.h
+	<stdexcept>
+

@@ -1,27 +1,31 @@
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
 
-class Codigo_de_Evento{
-    // especificacao: ter 9 digitos
+#include <stdexcept>
+#include <iostream>
 
-    private:
-            int codigo_de_evento;
+using namespace std;
 
-            const static int limite_tamanho = 999999999;
+class Codigo_de_Evento {
+private:
+        int codigo_de_evento;
 
-            // Método responsável por validação.
+        const static int LIMITE = 999;
 
-            void validar(int) throw (invalid_argument);
+        // Método responsável por validação.
 
-    public:
-            // metodos de acesso.
+        bool validar(int);
 
-            void setCodigo_de_Evento(int) throw (invalid_argument);
+public:
+        // Métodos de acesso.
 
-            int getCodigo_de_Evento() const {
-                return codigo_de_evento;
-            }
+        void setCodigo_de_Evento(int);
 
+        int getCodigo_de_Evento() const {
+            return codigo_de_evento;
+        }
 };
+
+
 
 #endif // DOMINIOS_H_INCLUDED
