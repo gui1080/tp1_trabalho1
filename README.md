@@ -1,5 +1,5 @@
 # Trabalho 1 de Técnicas de Programação 1  
-Professor Fernando Antonio de Araújo Chacon de Albuquerque
+Professor: Fernando Antonio de Araújo Chacon de Albuquerque
 
 # Alunos
 Gabriel Matheus - 17/0103498
