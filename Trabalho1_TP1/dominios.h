@@ -3,6 +3,7 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ class Codigo_de_Evento {
 private:
         int codigo_de_evento;
 
-        // temos que chear se o numero tem 3 digitos apenas
+        // temos que checar se o numero tem 3 digitos apenas
 
         const static int LIMITE = 999;
 
@@ -32,7 +33,7 @@ class Codigo_de_Apresentacao {
 private:
         int codigo_de_apresentacao;
 
-        // temos que chear se o numero tem 4 digitos apenas
+        // temos que checar se o numero tem 4 digitos apenas
 
         const static int LIMITE = 9999;
 
@@ -54,7 +55,7 @@ class Numero_de_Sala {
 private:
         int numero_de_sala;
 
-        // temos que chear se o numero e maior que zero e menor ou igual a 10
+        // temos que checar se o numero e maior que zero e menor ou igual a 10
 
         const static int LIMITE_INFERIOR = 1;
         const static int LIMITE_SUPERIOR = 10;
@@ -77,7 +78,7 @@ class Preco {
 private:
         float preco;
 
-        // temos que chear se o numero e maior ou igual que zero e menor ou igual a mil
+        // temos que checar se o numero e maior ou igual que zero e menor ou igual a mil
         // incluindo zero porque suponho que alguem va registrar um evento gratis neste sistema
 
         const static int LIMITE_INFERIOR = 0;
@@ -94,6 +95,27 @@ public:
 
         float getPreco () const {
             return preco;
+        }
+};
+
+class Estados_Brasileiros {
+private:
+        string estado_br;
+
+        // temos que checar se o estado existe
+        // suponho que siglas de estado se escrevem em letras maiusculas
+
+        // Método responsável por validação.
+
+        void validar(string) throw (invalid_argument);
+
+public:
+        // Métodos de acesso.
+
+        void setEstado (string) throw (invalid_argument);
+
+        string getEstado () {
+            return estado_br;
         }
 };
 

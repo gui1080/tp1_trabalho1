@@ -73,8 +73,36 @@ void Preco::validar(float novo_preco) throw (invalid_argument){
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void Estados_Brasileiros::setEstado(string novo_estado_br) throw (invalid_argument){
 
+    validar(novo_estado_br);
+    estado_br[0] = novo_estado_br[0];
+    estado_br[1] = novo_estado_br[1];
+
+}
+void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument){
+
+    int SUCESSO = 0;
+
+    if ((novo_estado_br.compare("AC") == SUCESSO) || (novo_estado_br.compare("AL") == SUCESSO) || (novo_estado_br.compare("AP") == SUCESSO)
+        || (novo_estado_br.compare("AM") == SUCESSO) || (novo_estado_br.compare("BA") == SUCESSO) || (novo_estado_br.compare("CE") == SUCESSO)
+        || (novo_estado_br.compare("DF") == SUCESSO) || (novo_estado_br.compare("ES") == SUCESSO) || (novo_estado_br.compare("GO") == SUCESSO)
+        || (novo_estado_br.compare("MA") == SUCESSO) || (novo_estado_br.compare("MT") == SUCESSO) || (novo_estado_br.compare("MS") == SUCESSO)
+        || (novo_estado_br.compare("MG") == SUCESSO) || (novo_estado_br.compare("PA") == SUCESSO) || (novo_estado_br.compare("PB") == SUCESSO)
+        || (novo_estado_br.compare("PR") == SUCESSO) || (novo_estado_br.compare("PE") == SUCESSO) || (novo_estado_br.compare("PI") == SUCESSO)
+        || (novo_estado_br.compare("RJ") == SUCESSO) || (novo_estado_br.compare("RN") == SUCESSO) || (novo_estado_br.compare("RS") == SUCESSO)
+        || (novo_estado_br.compare("RO") == SUCESSO) || (novo_estado_br.compare("RR") == SUCESSO) || (novo_estado_br.compare("SC") == SUCESSO)
+        || (novo_estado_br.compare("SP") == SUCESSO) || (novo_estado_br.compare("SE") == SUCESSO) || (novo_estado_br.compare("TO") == SUCESSO) ) {
+
+        // cout << "estado valido";
+    }
+    else{
+        throw invalid_argument ("estado invalido");
+    }
+
+}
 
 ///////////não sei pq mas não funfou botar essa função no arquivo de dominios.cpp (o certo), tenho que arrumar isso mais tarde/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -115,6 +143,17 @@ int main()
     x = quantia1.getPreco();
     cout << x;
     */
+
+    /*  Teste que fiz pra saber se a classe de Estados funcionava
+    */
+
+    string estado_br_novo ("AM");
+    Estados_Brasileiros estado1;
+    estado1.setEstado(estado_br_novo);
+
+
+
+
 
 
 
