@@ -8,7 +8,7 @@
 #include "testes.h"
 #include "testes.cpp"
 
-
+//Obs- Seguimos certas convenções como as que foram demonstradas em exeplos de sala de aula ao dar nome às variáveis
 
 using namespace std;
 

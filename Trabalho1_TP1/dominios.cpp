@@ -108,3 +108,57 @@ void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void CPF::setCPF(int* novo_num_cpf) throw (invalid_argument){
+
+    validar(novo_num_cpf);
+    int k = 0;
+
+    while(k < 11){
+        num_cpf[k] = novo_num_cpf[k];
+    }
+
+}
+void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
+
+    int somatorio_digt_validador_1 = 0;
+    int somatorio_digt_validador_0 = 0;
+    int resultado_digt_validador_1 = 0;
+    int resultado_digt_validador_0 = 0;
+
+    int i;
+    int SUCESSO = 0;
+    int multiplicador;
+
+    multiplicador = 2;
+
+    while(i < 9){
+        somatorio_digt_validador_1 += ((novo_num_cpf[i+2]) * multiplicador);
+        i++;
+        multiplicador++;
+    }
+
+    multiplicador = 2;
+    i = 0;
+    resultado_digt_validador_1 = ((somatorio_digt_validador_1*10)%11);
+
+    while(i < 10){
+        somatorio_digt_validador_0 += ((novo_num_cpf[i+1])* multiplicador);
+        i++;
+        multiplicador++;
+    }
+
+    resultado_digt_validador_0 = ((somatorio_digt_validador_0*10)%11);
+
+
+    if((resultado_digt_validador_1 != novo_num_cpf[1]) || (resultado_digt_validador_0 != novo_num_cpf[0])){
+        SUCESSO = 1;
+    }
+
+    if(SUCESSO != 0){
+        throw invalid_argument("cpf invalido");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
