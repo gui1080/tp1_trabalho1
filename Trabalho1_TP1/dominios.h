@@ -254,7 +254,7 @@ public:
         }
 };
 
-class Codigo_de_Seguranca {
+class Codigo_de_Seguranca_Cartao_Credito {
 private:
         int codigo_de_seguranca;
 
@@ -269,9 +269,9 @@ private:
 public:
         // Métodos de acesso.
 
-        void setCodigo_de_Seguranca(int) throw (invalid_argument);
+        void setCodigo_de_Seguranca_Cartao_Credito(int) throw (invalid_argument);
 
-        int getCodigo_de_Seguranca() const {
+        int getCodigo_de_Seguranca_Cartao_Credito() const {
             return codigo_de_seguranca;
         }
 };
@@ -297,7 +297,7 @@ public:
         }
 };
 
-class Data_Validade{
+class Data_Validade_Cartao_Credito{
 private:
         char *data_validade;
 
@@ -308,9 +308,9 @@ private:
 public:
         // Métodos de acesso.
 
-        void setData_Validade (string) throw (invalid_argument);
+        void setData_Validade_Cartao_Credito (string) throw (invalid_argument);
 
-        string getData_Validade () {
+        string getData_Validade_Cartao_Credito () {
             return data_validade;
         }
 };
@@ -335,6 +335,78 @@ public:
 
         int getDisponibilidade() const {
             return disponibilidade;
+        }
+};
+
+class Nome_de_Evento {
+private:
+        string nome_evento;
+
+        const static int LIMITE = 20;
+
+        // temos que checar se o nome tem 20 caracteres, pelo menos 1 letra
+        // não pode ter varios espaços vazios em seguida
+
+        // Método responsável por validação.
+
+        void validar(string) throw (invalid_argument);
+
+public:
+        // Métodos de acesso.
+
+        void setNome_de_Evento (string) throw (invalid_argument);
+
+        string getNome_de_Evento () {
+            return nome_evento;
+        }
+};
+
+class Data {
+private:
+        string data;
+
+        const static int LIMITE = 6;
+
+        // temos que checar se a data tem 6 caracteres
+        // formato: DD/MM/AA onde MM <= 12, AA <= 99 e >= 00, DD <= 31
+        // deve considerar anos bissextos
+        // vamos supor que não serão criados eventos para o passado ou para uma data que não pertence a este século, logo, ao se declarar o ano como "99", consideramos 2099.
+        // a entrada: se queremos expressar 25/12/2098, devemos escrever 251298 como a entrada (sem barras para facilitar, no output final se fara print com as divisoes)
+
+        // Método responsável por validação.
+
+        void validar(string) throw (invalid_argument);
+
+public:
+        // Métodos de acesso.
+
+        void setData (string) throw (invalid_argument);
+
+        string getData () {
+            return data;
+        }
+};
+
+class Cidade {
+private:
+        string cidade;
+
+        // temos que checar se a cidade tem 15 caracteres, cada caractere pode ser letra, espaço ou ponto
+        // pelo menos 1 caractere é letra
+        // não ha espaço seguido
+        // antes de ponto há uma letra
+
+        // Método responsável por validação.
+
+        void validar(string) throw (invalid_argument);
+
+public:
+        // Métodos de acesso.
+
+        void setCidade (string) throw (invalid_argument);
+
+        string getCidade () {
+            return cidade;
         }
 };
 

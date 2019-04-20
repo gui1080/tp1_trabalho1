@@ -162,5 +162,15 @@ int main()
                                 break;
     }
 
+    TUCodigo_de_Ingresso teste3;
+
+    switch(teste3.run()){
+        case TUCodigo_de_Ingresso::SUCESSO: cout << "Sucesso ao criar codigo de ingresso!" << endl;
+                                break;
+        case TUCodigo_de_Ingresso::FALHA  : cout << "Falha ao criar codigo de ingresso!" << endl;
+                                break;
+    }
+
+
     return 0;
 }

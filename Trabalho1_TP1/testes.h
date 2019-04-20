@@ -57,4 +57,31 @@ public:
     int run();
 };
 
+class TUCodigo_de_Ingresso {
+
+private:
+
+    const static int VALOR_VALIDO   = 12345;
+    const static int VALOR_INVALIDO = 123456;
+
+
+    Codigo_de_Ingresso *codigo_ingresso_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
 #endif // TESTES_H_INCLUDED

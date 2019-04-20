@@ -36,6 +36,8 @@ int TUCodigo_de_Evento::run(){
     return estado;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void TUCodigo_de_Apresentacao::setUp(){
     codigo_apresentacao_teste = new Codigo_de_Apresentacao();
     estado = SUCESSO;
@@ -63,6 +65,42 @@ void TUCodigo_de_Apresentacao::testarCenarioFalha(){
     }
 }
 int TUCodigo_de_Apresentacao::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void TUCodigo_de_Ingresso::setUp(){
+    codigo_ingresso_teste = new Codigo_de_Ingresso();
+    estado = SUCESSO;
+}
+void TUCodigo_de_Ingresso::tearDown(){
+    delete codigo_ingresso_teste;
+}
+void TUCodigo_de_Ingresso::testarCenarioSucesso(){
+    try{
+        codigo_ingresso_teste->setCodigo_de_Ingresso(VALOR_VALIDO);
+        if (codigo_ingresso_teste->getCodigo_de_Ingresso() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+}
+void TUCodigo_de_Ingresso::testarCenarioFalha(){
+    try{
+        codigo_ingresso_teste->setCodigo_de_Ingresso(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        return;
+    }
+}
+int TUCodigo_de_Ingresso::run(){
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
