@@ -1,6 +1,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <string.h>
+#include <stdlib.h>
 
 #include "dominios.h"
 
@@ -34,6 +35,79 @@ void Codigo_de_Apresentacao::validar(int novo_codigo_de_apresentacao) throw (inv
 
     if(novo_codigo_de_apresentacao > LIMITE){
         throw invalid_argument("deu ruim.");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Codigo_de_Ingresso::setCodigo_de_Ingresso(int novo_codigo_de_ingresso) throw (invalid_argument){
+
+    validar(novo_codigo_de_ingresso);
+    codigo_de_ingresso = novo_codigo_de_ingresso;
+
+}
+void Codigo_de_Ingresso::validar(int novo_codigo_de_ingresso) throw (invalid_argument){
+
+    if(novo_codigo_de_ingresso > LIMITE){
+        throw invalid_argument("deu ruim.");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Horario::setHorario(string novo_horario) throw (invalid_argument){
+
+    validar(novo_horario);
+    int k = 0;
+
+    while(k < 5){
+        horario[k] = novo_horario[k];
+        k++;
+    }
+    horario[5] = '\0';
+
+}
+void Horario::validar(string novo_horario) throw (invalid_argument){
+
+    char HH[2];
+    int HHaux, MMaux;
+    char MM[2];
+    int i, j;
+
+    if(novo_horario[5] != '\0'){
+    throw invalid_argument("Formato invalido");
+}
+
+    for(i = 0; i < 2; i++){
+        HH[i] = novo_horario[i];
+    }
+
+    HH[2] = '\0';
+    HHaux = atoi(HH);
+
+    for(j = 3; j < 5; j++){
+        MM[j-3] = novo_horario[j];
+    }
+    MM[2] = '\0';
+    MMaux = atoi(MM);
+
+    if(novo_horario[2] != ':'){
+
+    throw invalid_argument("Formato invalido");
+    }
+
+    if( 7 > HHaux ||  HHaux > 22 ){
+
+     throw invalid_argument("HH invalido");
+
+    }
+
+    if(MMaux == 0 || MMaux == 15 || MMaux == 30 || MMaux == 45){
+
+    } else{
+        throw invalid_argument("MM invalido");
     }
 
 }
@@ -109,6 +183,50 @@ void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void Classe_Evento::setClasse_Evento(int novo_classe_evento) throw (invalid_argument){
+
+    validar(novo_classe_evento);
+    classe_evento = novo_classe_evento;
+
+}
+void Classe_Evento::validar(int novo_classe_evento) throw (invalid_argument){
+
+    int Num_Opcoes_Evento = 4;
+
+    if(novo_classe_evento < 0 || novo_classe_evento > Num_Opcoes_Evento){
+        throw invalid_argument("opcao nao existe");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Faixa_Etaria::setFaixa_Etaria(string novo_faixa_etaria) throw (invalid_argument){
+
+    validar(novo_faixa_etaria);
+
+    faixa_etaria[0] = novo_faixa_etaria[0];
+    faixa_etaria[1] = novo_faixa_etaria[1];
+    faixa_etaria[2] = '\0';
+}
+void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
+
+    //string aux;
+    int IGUAL = 0;
+    //int size = strlen(novo_faixa_etaria);
+
+    if(novo_faixa_etaria.compare("L") == IGUAL || novo_faixa_etaria.compare("10") == IGUAL || novo_faixa_etaria.compare("12") == IGUAL
+       || novo_faixa_etaria.compare("14") == IGUAL ||novo_faixa_etaria.compare("16") == IGUAL || novo_faixa_etaria.compare("18") == IGUAL){
+
+
+    } else{
+        throw invalid_argument("Faixa Etaria invalida");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void CPF::setCPF(int* novo_num_cpf) throw (invalid_argument){
 
     validar(novo_num_cpf);
@@ -116,6 +234,7 @@ void CPF::setCPF(int* novo_num_cpf) throw (invalid_argument){
 
     while(k < 11){
         num_cpf[k] = novo_num_cpf[k];
+        k++;
     }
 
 }
@@ -157,6 +276,187 @@ void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
 
     if(SUCESSO != 0){
         throw invalid_argument("cpf invalido");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Senha::setSenha(string novo_senha) throw (invalid_argument){
+
+  validar(novo_senha);
+  int k = 0;
+
+    while(k < 6){
+        senha[k] = novo_senha[k];
+        k++;
+    }
+    senha[6] = '\0';
+}
+void Senha::validar(string novo_classe_senha) throw (invalid_argument){
+
+int i, j;
+bool Possui_M = false;
+char aux;
+bool Possui_m = false;
+bool Possui_dig = false;
+
+if(novo_classe_senha[6] != '\0'){
+    throw invalid_argument("A senha possuiu caracteres a mais");
+}
+
+for (i = 0; i < 6; i++ ){
+
+    if(i > 0){
+        aux = novo_classe_senha[i];
+    for(j = i; j > 0; j--){
+        if(aux == novo_classe_senha[j - 1])
+         throw invalid_argument("A senha possuiu caracteres repetidos");
+        }
+    }
+
+    if(isalnum(novo_classe_senha[i]) == false){
+    throw invalid_argument("A senha possuiu caracteres invalidos");
+    }
+    else if ( isupper(novo_classe_senha[i]) ){
+      Possui_M = true ;
+    }
+    else if ( islower(novo_classe_senha[i]) ){
+      Possui_m = true ;
+    }
+    else if ( isdigit(novo_classe_senha[i]) ){
+        Possui_dig = true ;
+    }
+}
+	if ( Possui_M == false || Possui_m == false || Possui_dig == false ){
+    throw invalid_argument("A senha nao possui os pre requisitos necessarios");
+	}
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Codigo_de_Seguranca::setCodigo_de_Seguranca(int novo_codigo_de_seguranca) throw (invalid_argument){
+
+    validar(novo_codigo_de_seguranca);
+    codigo_de_seguranca = novo_codigo_de_seguranca;
+
+}
+void Codigo_de_Seguranca::validar(int novo_codigo_de_seguranca) throw (invalid_argument){
+
+    if(novo_codigo_de_seguranca > LIMITE){
+        throw invalid_argument("codigo invalido");
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Numero_Cartao_Credito::setNumero_Cartao_Credito(long long int novo_num_cartao_credito) throw (invalid_argument){
+
+
+    char xaux[26];
+    lltoa(novo_num_cartao_credito, xaux, 10);
+    validar(xaux);
+
+    num_cartao_credito = novo_num_cartao_credito;
+}
+void Numero_Cartao_Credito::validar(string novo_num_cartao_credito) throw (invalid_argument){
+
+    int nSum       = 0;
+    int nDigits    = 16;
+    int nParity    = (nDigits-1) % 2;
+    char cDigit[2] = "\0";
+
+    for (int i = nDigits; i > 0 ; i--){
+
+      cDigit[0]  = novo_num_cartao_credito[i-1];
+
+      int nDigit = atoi(cDigit);
+
+      if (nParity == i % 2)
+        nDigit = nDigit * 2;
+
+      nSum += nDigit/10;
+      nSum += nDigit%10;
+    }
+
+    if(nSum % 10 != 0){
+        throw invalid_argument("numero invalido");
+    }
+
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Data_Validade::setData_Validade(string novo_data_validade) throw (invalid_argument){
+
+    validar(novo_data_validade);
+    int k = 0;
+
+    while(k < 5){
+        data_validade[k] = novo_data_validade[k];
+        k++;
+    }
+    data_validade[5] = '\0';
+
+}
+void Data_Validade::validar(string novo_data_validade) throw (invalid_argument){
+
+    char XX[2];
+    int XXaux, YYaux;
+    char YY[2];
+    int i, j;
+
+    if(novo_data_validade[5] != '\0'){
+        throw invalid_argument("Formato invalido");
+    }
+
+    for(i = 0; i < 2; i++){
+        XX[i] = novo_data_validade[i];
+    }
+
+    XX[2] = '\0';
+    XXaux = atoi(XX);
+
+    for(j = 3; j < 5; j++){
+        YY[j-3] = novo_data_validade[j];
+    }
+    YY[2] = '\0';
+    YYaux = atoi(YY);
+
+    if(novo_data_validade[2] != '/'){
+
+    throw invalid_argument("Formato invalido");
+    }
+
+    if( 0 > XXaux ||  XXaux > 12 ){
+
+     throw invalid_argument("XX invalido");
+
+    }
+    if( 0 > YYaux ||  YYaux > 99 ){
+
+     throw invalid_argument("YY invalido");
+
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Disponibilidade::setDisponibilidade(int novo_disponibilidade) throw (invalid_argument){
+
+    validar(novo_disponibilidade);
+    disponibilidade = novo_disponibilidade;
+
+}
+void Disponibilidade::validar(int novo_disponibilidade) throw (invalid_argument){
+
+    if(novo_disponibilidade > LIMITE_SUPERIOR){
+        throw invalid_argument("numero_invalido");
+    }
+    else if(novo_disponibilidade < LIMITE_INFERIOR){
+        throw invalid_argument("numero_invalido");
     }
 
 }
