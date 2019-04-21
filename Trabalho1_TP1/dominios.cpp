@@ -5,6 +5,14 @@
 
 #include "dominios.h"
 
+/*
+Feito por:
+Guilherme Braga Pinto
+Gabriel Matheus da Rocha de Oliveira
+Last Update: xx/xx/2019
+UnB
+*/
+
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -597,7 +605,7 @@ void Cidade::setCidade(string nova_cidade) throw (invalid_argument){
     for(z=0; z<15; z++){
         cidade[z] = nova_cidade[z];      //passamos nova entrada para classe
         if(nova_cidade[z] == '.'){
-            cidade[z + 1] == '\0';        //palavra acaba no ponto
+            //cidade[z + 1] == '\0';        //palavra acaba no ponto
             fim_string = 1;
         }
     }

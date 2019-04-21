@@ -9,6 +9,14 @@
 #include "testes.h"
 #include "testes.cpp"
 
+/*
+Feito por:
+Guilherme Braga Pinto
+Gabriel Matheus da Rocha de Oliveira
+Last Update: xx/xx/2019
+UnB
+*/
+
 //Obs- Seguimos certas convenções como as que foram demonstradas em exeplos de sala de aula ao dar nome às variáveis
 
 using namespace std;
@@ -91,7 +99,6 @@ int main()
     //  Teste que fiz pra saber se a classe de Senha funcionava
 /*
     string x;
-    //string y("L");
     Senha codigo1;
     codigo1.setSenha("pAa2O3");
     x = codigo1.getSenha();
@@ -117,7 +124,7 @@ int main()
     cout << x << endl;
 */
 
- //  Teste que fiz pra saber se a classe de Numero de cartao de drecito funcionava
+ //  Teste que fiz pra saber se a classe de Numero de cartao de crecito funcionava
 /*
     long long int x;
     Numero_Cartao_Credito codigo1;
@@ -171,6 +178,101 @@ int main()
                                 break;
     }
 
+    TUCodigo_de_Ingresso teste4;
+
+    switch(teste4.run()){
+        case TUEstados_Brasileiros::SUCESSO: cout << "Sucesso ao criar estado brasileiro!" << endl;
+                                break;
+        case TUEstados_Brasileiros::FALHA  : cout << "Falha ao criar estado brasileiro!" << endl;
+                                break;
+    }
+
+    TUCodigo_de_Ingresso teste5;
+
+    switch(teste5.run()){
+        case TUNumero_de_Sala::SUCESSO: cout << "Sucesso ao criar numero de sala!" << endl;
+                                break;
+        case TUNumero_de_Sala::FALHA  : cout << "Falha ao criar numero de sala!" << endl;
+                                break;
+    }
+
+    TUCodigo_de_Ingresso teste6;
+
+    switch(teste6.run()){
+        case TUPreco::SUCESSO: cout << "Sucesso ao criar preco!" << endl;
+                                break;
+        case TUPreco::FALHA  : cout << "Falha ao criar preco!" << endl;
+                                break;
+    }
+
+    TUCodigo_de_Ingresso teste7;
+
+    switch(teste7.run()){
+        case TUClasse_Evento::SUCESSO: cout << "Sucesso ao criar classe de evento!" << endl;
+                                break;
+        case TUClasse_Evento::FALHA  : cout << "Falha ao criar classe de evento!" << endl;
+                                break;
+    }
+
+    TUCodigo_de_Seguranca_Cartao_Credito teste8;
+
+    switch(teste8.run()){
+        case TUCodigo_de_Seguranca_Cartao_Credito::SUCESSO: cout << "Sucesso ao criar codigo de seguranca cartao credito!" << endl;
+                                break;
+        case TUCodigo_de_Seguranca_Cartao_Credito::FALHA  : cout << "Falha ao criar codigo de seguranca cartao credito!" << endl;
+                                break;
+    }
+
+
+    TUNumero_Cartao_Credito teste9;
+
+    switch(teste9.run()){
+        case TUNumero_Cartao_Credito::SUCESSO: cout << "Sucesso ao criar numero de cartao credito!" << endl;
+                                break;
+        case TUNumero_Cartao_Credito::FALHA  : cout << "Falha ao criar numero de cartao credito!" << endl;
+                                break;
+    }
+
+
+
+
+/*
+    TUSenha testey;
+
+    switch(teste9.run()){
+        case TUSenha::SUCESSO: cout << "Sucesso ao criar senha!" << endl;
+                                break;
+        case TUSenha::FALHA  : cout << "Falha ao criar senha!" << endl;
+                                break;
+    }
+
+*/
+
+
+
+/*
+    TUFaixa_Etaria testez;
+
+    switch(teste8.run()){
+        case TUFaixa_Etaria::SUCESSO: cout << "Sucesso ao criar faixa etaria!" << endl;
+                                break;
+        case TUFaixa_Etaria::FALHA  : cout << "Falha ao criar faixa etaria!" << endl;
+                                break;
+    }
+*/
+
+
+/*
+    TUHorario testex;
+
+    switch(testex.run()){
+        case TUHorario::SUCESSO: cout << "Sucesso ao criar horario!" << endl;
+                                break;
+        case TUHorario::FALHA  : cout << "Falha ao criar horario!" << endl;
+                                break;
+    }
+
+*/
 
     return 0;
 }

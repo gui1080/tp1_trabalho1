@@ -6,6 +6,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+/*
+Feito por:
+Guilherme Braga Pinto
+Gabriel Matheus da Rocha de Oliveira
+Last Update: xx/xx/2019
+UnB
+*/
+
 using namespace std;
 
 class Codigo_de_Evento {
