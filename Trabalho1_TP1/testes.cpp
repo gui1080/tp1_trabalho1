@@ -435,7 +435,7 @@ void TUCPF::testarCenarioSucesso(){
 }
 void TUCPF::testarCenarioFalha(){
 
-    long long int VALOR_INVALIDO = 00000000000;
+    long long int VALOR_INVALIDO = 1234567892;
 
     try{
         cpf_teste->setCPF(VALOR_INVALIDO);
@@ -495,7 +495,7 @@ int TUSenha::run(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*   o teste da faixa etaria não rodou
+//   o teste da faixa etaria não rodou
 
 void TUFaixa_Etaria::setUp(){
     faixa_etaria_teste = new Faixa_Etaria();
@@ -508,6 +508,7 @@ void TUFaixa_Etaria::testarCenarioSucesso(){
 
     try{
         faixa_etaria_teste->setFaixa_Etaria("12");
+        cout << faixa_etaria_teste->getFaixa_Etaria();
         if ((faixa_etaria_teste->getFaixa_Etaria()) != "12")
             estado = FALHA;
     }
@@ -533,7 +534,7 @@ int TUFaixa_Etaria::run(){
     return estado;
 }
 
-*/
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

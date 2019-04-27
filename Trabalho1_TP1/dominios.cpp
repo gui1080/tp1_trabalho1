@@ -246,6 +246,7 @@ void CPF::setCPF(long long int novo_num_cpf) throw (invalid_argument){
 void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
 
     int array_novo_num_cpf[11];
+    int auxiliar;
 
     int n1, n2, aux1, aux2;
     int digitoverificador1, digitoverificador2;
@@ -260,14 +261,15 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     n2=0;
     aux1=0;
     aux2=0;
+    auxiliar = novo_num_cpf;
 
 
 
     do{
-        array_novo_num_cpf[i] = (novo_num_cpf % 10);
-        novo_num_cpf /= 10;
+        array_novo_num_cpf[i] = (auxiliar % 10);
+        auxiliar /= 10;
         i--;
-    } while  (novo_num_cpf > 0);
+    } while  (auxiliar > 0);
 
     j = 10;
 
