@@ -235,19 +235,49 @@ int main()
 
 
 
+    TUDisponibilidade teste10;
+
+    switch(teste10.run()){
+        case TUDisponibilidade::SUCESSO: cout << "Sucesso ao criar disponibilidade!" << endl;
+                                break;
+        case TUDisponibilidade::FALHA  : cout << "Falha ao criar disponibilidade!" << endl;
+                                break;
+    }
+
+/*    TUCPF teste11;
+
+    switch(teste11.run()){
+        case TUCPF::SUCESSO: cout << "Sucesso ao validar cpf!" << endl;
+                                break;
+        case TUCPF::FALHA  : cout << "Falha ao validar cpf!" << endl;
+                                break;
+    }
+*/
+/*
+
+    TUData_Validade_Cartao_Credito teste11;
+
+    switch(teste11.run()){
+        case TUData_Validade_Cartao_Credito::SUCESSO: cout << "Sucesso ao criar data de validade do cartao!" << endl;
+                                break;
+        case TUData_Validade_Cartao_Credito::FALHA  : cout << "Falha ao criar data de validade do cartao!" << endl;
+                                break;
+    }
+
+*/
 
 /*
-    TUSenha testey;
+    TUSenha teste10;
 
-    switch(teste9.run()){
+    switch(teste10.run()){
         case TUSenha::SUCESSO: cout << "Sucesso ao criar senha!" << endl;
                                 break;
         case TUSenha::FALHA  : cout << "Falha ao criar senha!" << endl;
                                 break;
     }
 
-*/
 
+*/
 
 
 /*

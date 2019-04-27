@@ -1,4 +1,8 @@
 #include "testes.h"
+#include <iostream>
+
+const string TUSenha::SENHA_VALIDA ("pAa2O3");
+const string TUSenha::SENHA_INVALIDA ("12345");
 
 using namespace std;
 
@@ -337,8 +341,137 @@ int TUNumero_Cartao_Credito::run(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void TUDisponibilidade::setUp(){
+    disp_teste = new Disponibilidade();
+    estado = SUCESSO;
+}
+void TUDisponibilidade::tearDown(){
+    delete disp_teste;
+}
+void TUDisponibilidade::testarCenarioSucesso(){
+    try{
+        disp_teste->setDisponibilidade(VALOR_VALIDO);
+        if (disp_teste->getDisponibilidade() != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+}
+void TUDisponibilidade::testarCenarioFalha(){
 
-/*
+    try{
+        disp_teste->setDisponibilidade(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        return;
+    }
+}
+int TUDisponibilidade::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void TUData_Validade_Cartao_Credito::setUp(){
+    val_teste = new Data_Validade_Cartao_Credito();
+    estado = SUCESSO;
+}
+void TUData_Validade_Cartao_Credito::tearDown(){
+    delete val_teste;
+}
+void TUData_Validade_Cartao_Credito::testarCenarioSucesso(){
+
+    try{
+        val_teste->setData_Validade_Cartao_Credito("10/10");
+        if (val_teste->getData_Validade_Cartao_Credito() != ("10/10"))
+            estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+}
+void TUData_Validade_Cartao_Credito::testarCenarioFalha(){
+
+    try{
+        val_teste->setData_Validade_Cartao_Credito("kkkkk");
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        return;
+    }
+}
+int TUData_Validade_Cartao_Credito::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+void TUCPF::setUp(){
+    cpf_teste = new CPF();
+    estado = SUCESSO;
+}
+void TUCPF::tearDown(){
+    delete cpf_teste;
+}
+void TUCPF::testarCenarioSucesso(){
+
+    int VALOR_VALIDO[11];
+    VALOR_VALIDO[0] = 0;
+    VALOR_VALIDO[1] = 1;
+    VALOR_VALIDO[2] = 7;
+    VALOR_VALIDO[3] = 2;
+    VALOR_VALIDO[4] = 9;
+    VALOR_VALIDO[5] = 8;
+    VALOR_VALIDO[6] = 5;
+    VALOR_VALIDO[7] = 6;
+    VALOR_VALIDO[8] = 1;
+    VALOR_VALIDO[9] = 7;
+    VALOR_VALIDO[10] = 9;
+
+    try{
+        cpf_teste->setCPF(VALOR_VALIDO);
+        if (cpf_teste->getCPF() != (VALOR_VALIDO))
+            estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+}
+void TUCPF::testarCenarioFalha(){
+
+    int VALOR_INVALIDO[11];
+    int i;
+
+    for(i=0; i<11; i++){
+        VALOR_INVALIDO[i] = i;
+    }
+
+    try{
+        cpf_teste->setCPF(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        return;
+    }
+}
+int TUCPF::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void TUSenha::setUp(){
     senha_teste = new Senha();
     estado = SUCESSO;
@@ -348,12 +481,10 @@ void TUSenha::tearDown(){
 }
 void TUSenha::testarCenarioSucesso(){
 
-    string SENHA_VALIDA("pAa2O3");
-
     try{
         senha_teste->setSenha(SENHA_VALIDA);
         cout<<senha_teste->getSenha();
-        if (senha_teste->getSenha() != "pAa2O3")
+        if (senha_teste->getSenha() != SENHA_VALIDA)
             estado = FALHA;
     }
     catch(invalid_argument excecao){
@@ -361,8 +492,6 @@ void TUSenha::testarCenarioSucesso(){
     }
 }
 void TUSenha::testarCenarioFalha(){
-
-    string SENHA_INVALIDA("12345");
 
     try{
         senha_teste->setSenha(SENHA_INVALIDA);
@@ -379,7 +508,7 @@ int TUSenha::run(){
     tearDown();
     return estado;
 }
-*/
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*   o teste da faixa etaria não rodou

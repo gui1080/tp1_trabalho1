@@ -249,14 +249,11 @@ public:
 
     int run();
 };
-
-
-/*
-class TUSenha {
+class TUCPF {
 
 private:
 
-    Senha *senha_teste;
+    CPF *cpf_teste;
 
     int estado;
 
@@ -274,7 +271,88 @@ public:
 
     int run();
 };
-*/
+
+
+class TUDisponibilidade {
+
+private:
+
+    const static int VALOR_VALIDO   = 123;
+    const static int VALOR_INVALIDO = 7777;
+
+    Disponibilidade *disp_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
+class TUData_Validade_Cartao_Credito {
+
+private:
+
+    Data_Validade_Cartao_Credito *val_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+class TUSenha {
+
+private:
+
+    Senha *senha_teste;
+
+    int estado;
+
+
+    const static string SENHA_VALIDA;
+    const static string SENHA_INVALIDA;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
 
 
 /*

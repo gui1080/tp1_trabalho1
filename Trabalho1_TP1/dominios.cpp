@@ -249,41 +249,72 @@ void CPF::setCPF(int* novo_num_cpf) throw (invalid_argument){
 }
 void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
 
-    int somatorio_digt_validador_1 = 0;
-    int somatorio_digt_validador_0 = 0;
-    int resultado_digt_validador_1 = 0;
-    int resultado_digt_validador_0 = 0;
+    int n1, n2, aux1, aux2;
+    int digitoverificador1, digitoverificador2;
 
     int i;
+    int j;
     int SUCESSO = 0;
-    int multiplicador;
 
-    multiplicador = 2;
+    digitoverificador1=0;
+    digitoverificador2=0;
+    n1=0;
+    n2=0;
+    aux1=0;
+    aux2=0;
 
-    while(i < 9){
-        somatorio_digt_validador_1 += ((novo_num_cpf[i+2]) * multiplicador);
-        i++;
-        multiplicador++;
+
+    j = 10;
+
+    for(i=0; i<9; i++){
+        n1= n1 + ((novo_num_cpf[i])*j);
+        j--;
+    }
+    aux1 = (n1 % 11);
+    if((aux1==0) || (aux1==1)){
+        digitoverificador1=0;
+    }
+    else {
+        digitoverificador1=(11-aux1);
     }
 
-    multiplicador = 2;
-    i = 0;
-    resultado_digt_validador_1 = ((somatorio_digt_validador_1*10)%11);
+    j=11;
 
-    while(i < 10){
-        somatorio_digt_validador_0 += ((novo_num_cpf[i+1])* multiplicador);
-        i++;
-        multiplicador++;
+    for(i=0; i<10; i++){
+        n2 = n2 + ((novo_num_cpf[i])*j);
+        j--;
+    }
+    aux2 = (n2 % 11);
+
+    if((aux2==0) || (aux2==1)){
+        digitoverificador2=0;
+    }
+    else{
+        digitoverificador2=(11-aux2);
     }
 
-    resultado_digt_validador_0 = ((somatorio_digt_validador_0*10)%11);
+    //cout <<(aux1);
 
 
-    if((resultado_digt_validador_1 != novo_num_cpf[1]) || (resultado_digt_validador_0 != novo_num_cpf[0])){
+    //int x = digitoverificador1;
+    //int y = novo_num_cpf[9];
+
+    //cout << x;
+    //cout << "\n";
+    //cout << y;
+    //cout << "\n\n";
+    //cout << digitoverificador2;
+    //cout << "\n";
+    //cout << novo_num_cpf[10];
+    //cout << "\n\n\n";
+    //ta indo agr
+
+
+    if( ((novo_num_cpf[9]) != (digitoverificador1)) || ((novo_num_cpf[10]) != (digitoverificador2) )){
         SUCESSO = 1;
     }
 
-    if(SUCESSO != 0){
+    if(SUCESSO == 1){
         throw invalid_argument("cpf invalido");
     }
 
