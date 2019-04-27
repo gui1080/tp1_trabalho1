@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <stdlib.h>
 
 #include "dominios.h"
@@ -58,7 +58,8 @@ void Codigo_de_Ingresso::setCodigo_de_Ingresso(int novo_codigo_de_ingresso) thro
 void Codigo_de_Ingresso::validar(int novo_codigo_de_ingresso) throw (invalid_argument){
 
     if(novo_codigo_de_ingresso > LIMITE){
-        throw invalid_argument("deu ruim.");
+        //cout << novo_codigo_de_ingresso << endl;
+        throw invalid_argument("numero acima do limite");
     }
 
 }
@@ -67,7 +68,9 @@ void Codigo_de_Ingresso::validar(int novo_codigo_de_ingresso) throw (invalid_arg
 
 void Horario::setHorario(string novo_horario) throw (invalid_argument){
 
-    validar(novo_horario);
+
+  validar(novo_horario);
+
     int k = 0;
 
     while(k < 5){
@@ -75,6 +78,7 @@ void Horario::setHorario(string novo_horario) throw (invalid_argument){
         k++;
     }
     horario[5] = '\0';
+
 
 }
 void Horario::validar(string novo_horario) throw (invalid_argument){
@@ -246,7 +250,6 @@ void CPF::setCPF(long long int novo_num_cpf) throw (invalid_argument){
 void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
 
     int array_novo_num_cpf[11];
-    int auxiliar;
 
     int n1, n2, aux1, aux2;
     int digitoverificador1, digitoverificador2;
@@ -261,15 +264,14 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     n2=0;
     aux1=0;
     aux2=0;
-    auxiliar = novo_num_cpf;
 
 
 
     do{
-        array_novo_num_cpf[i] = (auxiliar % 10);
-        auxiliar /= 10;
+        array_novo_num_cpf[i] = (novo_num_cpf % 10);
+        novo_num_cpf /= 10;
         i--;
-    } while  (auxiliar > 0);
+    } while  (novo_num_cpf > 0);
 
     j = 10;
 
@@ -332,6 +334,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
 void Senha::setSenha(string novo_senha) throw (invalid_argument){
 
   validar(novo_senha);
+
   int k = 0;
 
     while(k < 6){
@@ -439,14 +442,16 @@ void Numero_Cartao_Credito::validar(string novo_num_cartao_credito) throw (inval
 void Data_Validade_Cartao_Credito::setData_Validade_Cartao_Credito(string novo_data_validade) throw (invalid_argument){
 
     validar(novo_data_validade);
+
     int k = 0;
 
     while(k < 5){
         data_validade[k] = novo_data_validade[k];
+        //cout << data_validade[k] << endl;
         k++;
     }
     data_validade[5] = '\0';
-
+    //cout << data_validade << endl;
 }
 void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (invalid_argument){
 

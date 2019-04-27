@@ -84,7 +84,7 @@ public:
 
 class Horario{
 private:
-        char *horario;
+        string horario;
 
         // FORMATO: HH:MM
         // HH é número entre 0 e 22
@@ -200,7 +200,7 @@ public:
 
 class Faixa_Etaria{
 private:
-        char *faixa_etaria;
+        string faixa_etaria;
 
         // L, 10, 12, 14, 16 OU 18
 
@@ -246,7 +246,7 @@ private:
         //não pode ter caracteres repetidos
         //deve possuiu uma letra maiuscula, uma minuscula e um digito
 
-        char *senha;
+        string senha;
 
         // Método responsável por validação.
 
@@ -307,7 +307,7 @@ public:
 
 class Data_Validade_Cartao_Credito{
 private:
-        char *data_validade;
+        string data_validade;
 
         // Método responsável por validação.
 

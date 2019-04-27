@@ -1,10 +1,12 @@
 #include <stdexcept>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <stdlib.h>
 
 #include "dominios.h"
 #include "dominios.cpp"
+#include "entidades.h"
+#include "entidades.cpp"
 
 #include "testes.h"
 #include "testes.cpp"
@@ -89,14 +91,14 @@ int main()
     */
 
     //  Teste que fiz pra saber se a classe de Horario funcionava
-/*
+
     string x;
     //string y("08:15");
     Horario codigo1;
     codigo1.setHorario("10:30");
     x = codigo1.getHorario();
     cout << x << endl;
-*/
+
   //  Teste que fiz pra saber se a classe de Classe Evento funcionava
 /*
     int x;
@@ -107,13 +109,13 @@ int main()
 */
 
     //  Teste que fiz pra saber se a classe de Senha funcionava
-/*
-    string x;
-    Senha codigo1;
-    codigo1.setSenha("pAa2O3");
-    x = codigo1.getSenha();
-    cout << x << endl;
-*/
+
+    string xyz;
+    Senha codigo11;
+    codigo11.setSenha("pAa2O3");
+    xyz = codigo11.getSenha();
+    cout << xyz << endl;
+
 
     //  Teste que fiz pra saber se a classe de Faixa_Etaria funcionava
 /*
@@ -144,14 +146,13 @@ int main()
 */
 
     //  Teste que fiz pra saber se a classe de Data de Validade funcionava
-/*
-    string x;
-    //string y("08:15");
-    Data_Validade codigo1;
-    codigo1.setData_Validade("10/39");
-    x = codigo1.getData_Validade();
-    cout << x << endl;
-*/
+
+    string xy;
+    Data_Validade_Cartao_Credito codigo23;
+    codigo23.setData_Validade_Cartao_Credito("10/39");
+    xy = codigo23.getData_Validade_Cartao_Credito();
+    cout << xy << endl;
+
   //  Teste que fiz pra saber se a classe de disponibilidade funcionava
 /*
     int x;
@@ -263,15 +264,6 @@ int main()
                                 break;
     }
 
-//    TUFaixa_Etaria teste12;
-
- /*   switch(teste12.run()){
-        case TUFaixa_Etaria::SUCESSO: cout << "Sucesso ao criar faixa etaria!" << endl;
-                                break;
-        case TUFaixa_Etaria::FALHA  : cout << "Falha ao criar faixa etaria!" << endl;
-                                break;
-    }
-/*
 /*
 
     TUData_Validade_Cartao_Credito teste11;
@@ -295,10 +287,20 @@ int main()
                                 break;
     }
 
+*/
 
 
 
+/*
+    TUFaixa_Etaria testez;
 
+    switch(teste8.run()){
+        case TUFaixa_Etaria::SUCESSO: cout << "Sucesso ao criar faixa etaria!" << endl;
+                                break;
+        case TUFaixa_Etaria::FALHA  : cout << "Falha ao criar faixa etaria!" << endl;
+                                break;
+    }
+*/
 
 
 /*
@@ -312,6 +314,33 @@ int main()
     }
 
 */
+
+Ingresso testeing;
+    testeing.setIngresso(12345);
+
+ Codigo_de_Ingresso teste_codigo;
+
+   testeing.getIngresso(&teste_codigo);
+   int resultado = teste_codigo.getCodigo_de_Ingresso();
+
+    cout << "Ingresso -> " << resultado << endl;
+
+Cartao_de_credito testcart;
+        testcart.setCartao_de_credito(30211944335337, 123,"10/39");
+
+ Numero_Cartao_Credito teste_numero;
+ Codigo_de_Seguranca_Cartao_Credito teste_codigo_s;
+ //Data_Validade_Cartao_Credito teste_data;
+
+ //testcart.getCartao_de_credito(&teste_numero, &teste_codigo_s, &teste_data);
+
+ long long int resultado1 = teste_numero.getNumero_Cartao_Credito();
+ int resultado2 = teste_codigo_s.getCodigo_de_Seguranca_Cartao_Credito();
+ //string resultado3 = teste_data.getData_Validade_Cartao_Credito();
+
+    //cout << "Numero do cartao de credito -> " << resultado1 << endl;
+    //cout << "Codigo do cartao de credito -> " << resultado2 << endl;
+    //cout << "Data de validade -> " << resultado3 << endl;
 
     return 0;
 }

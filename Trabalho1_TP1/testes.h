@@ -249,6 +249,7 @@ public:
 
     int run();
 };
+
 class TUCPF {
 
 private:
@@ -271,7 +272,6 @@ public:
 
     int run();
 };
-
 
 class TUDisponibilidade {
 
@@ -354,6 +354,8 @@ public:
 };
 
 
+
+/*
 class TUFaixa_Etaria {
 
 private:
@@ -376,7 +378,7 @@ public:
 
     int run();
 };
-
+*/
 
 
 /*
