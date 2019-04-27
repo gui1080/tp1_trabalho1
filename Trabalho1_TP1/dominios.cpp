@@ -236,23 +236,21 @@ void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void CPF::setCPF(int* novo_num_cpf) throw (invalid_argument){
+void CPF::setCPF(long long int novo_num_cpf) throw (invalid_argument){
 
     validar(novo_num_cpf);
-    int k = 0;
 
-    while(k < 11){
-        num_cpf[k] = novo_num_cpf[k];
-        k++;
-    }
+    num_cpf = novo_num_cpf;
 
 }
-void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
+void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
+
+    int array_novo_num_cpf[11];
 
     int n1, n2, aux1, aux2;
     int digitoverificador1, digitoverificador2;
 
-    int i;
+    int i = 10;
     int j;
     int SUCESSO = 0;
 
@@ -264,10 +262,17 @@ void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
     aux2=0;
 
 
+
+    do{
+        array_novo_num_cpf[i] = (novo_num_cpf % 10);
+        novo_num_cpf /= 10;
+        i--;
+    } while  (novo_num_cpf > 0);
+
     j = 10;
 
     for(i=0; i<9; i++){
-        n1= n1 + ((novo_num_cpf[i])*j);
+        n1= n1 + ((array_novo_num_cpf[i])*j);
         j--;
     }
     aux1 = (n1 % 11);
@@ -281,7 +286,7 @@ void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
     j=11;
 
     for(i=0; i<10; i++){
-        n2 = n2 + ((novo_num_cpf[i])*j);
+        n2 = n2 + ((array_novo_num_cpf[i])*j);
         j--;
     }
     aux2 = (n2 % 11);
@@ -310,7 +315,7 @@ void CPF::validar(int* novo_num_cpf) throw (invalid_argument){
     //ta indo agr
 
 
-    if( ((novo_num_cpf[9]) != (digitoverificador1)) || ((novo_num_cpf[10]) != (digitoverificador2) )){
+    if( ((array_novo_num_cpf[9]) != (digitoverificador1)) || ((array_novo_num_cpf[10]) != (digitoverificador2) )){
         SUCESSO = 1;
     }
 

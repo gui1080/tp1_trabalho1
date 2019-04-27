@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <stdlib.h>
 
 /*
@@ -220,21 +220,21 @@ public:
 
 class CPF{
 private:
-        int num_cpf[11];
+        long long int num_cpf;
 
         // temos que checar se o numero tem 9 digitos
         // suponho que a entrada é um numero sem pontos e sem barra
 
         // Método responsável por validação.
 
-        void validar(int*) throw (invalid_argument);
+        void validar(long long int) throw (invalid_argument);
 
 public:
         // Métodos de acesso.
 
-        void setCPF (int*) throw (invalid_argument);
+        void setCPF (long long int) throw (invalid_argument);
 
-        int* getCPF () {
+        int getCPF () {
             return num_cpf;
         }
 };

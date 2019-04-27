@@ -28,7 +28,17 @@ int main()
 {
 
     //daqui rodaremos os testes
-    cout << "to com saudade do printf e com saudade do terminal de Linux\n";
+    //cout << "to com saudade do printf e com saudade do terminal de Linux\n";
+
+    //CPF cpf1;
+
+    //int VALOR_VALIDO = 98603079030;
+    //cpf1.setCPF(VALOR_VALIDO);
+
+
+    //cout << cpf1.getCPF();
+
+
 
     /*  Teste que fiz pra saber se a classe de evento funcionava
     int x;
@@ -244,7 +254,7 @@ int main()
                                 break;
     }
 
-/*    TUCPF teste11;
+    TUCPF teste11;
 
     switch(teste11.run()){
         case TUCPF::SUCESSO: cout << "Sucesso ao validar cpf!" << endl;
@@ -252,7 +262,7 @@ int main()
         case TUCPF::FALHA  : cout << "Falha ao validar cpf!" << endl;
                                 break;
     }
-*/
+
 /*
 
     TUData_Validade_Cartao_Credito teste11;
@@ -266,8 +276,8 @@ int main()
 
 */
 
-/*
-    TUSenha teste10;
+
+ /*   TUSenha teste10;
 
     switch(teste10.run()){
         case TUSenha::SUCESSO: cout << "Sucesso ao criar senha!" << endl;
@@ -277,7 +287,7 @@ int main()
     }
 
 
-*/
+
 
 
 /*

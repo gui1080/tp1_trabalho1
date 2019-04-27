@@ -422,18 +422,7 @@ void TUCPF::tearDown(){
 }
 void TUCPF::testarCenarioSucesso(){
 
-    int VALOR_VALIDO[11];
-    VALOR_VALIDO[0] = 0;
-    VALOR_VALIDO[1] = 1;
-    VALOR_VALIDO[2] = 7;
-    VALOR_VALIDO[3] = 2;
-    VALOR_VALIDO[4] = 9;
-    VALOR_VALIDO[5] = 8;
-    VALOR_VALIDO[6] = 5;
-    VALOR_VALIDO[7] = 6;
-    VALOR_VALIDO[8] = 1;
-    VALOR_VALIDO[9] = 7;
-    VALOR_VALIDO[10] = 9;
+    long long int VALOR_VALIDO = 69386992086;
 
     try{
         cpf_teste->setCPF(VALOR_VALIDO);
@@ -446,12 +435,7 @@ void TUCPF::testarCenarioSucesso(){
 }
 void TUCPF::testarCenarioFalha(){
 
-    int VALOR_INVALIDO[11];
-    int i;
-
-    for(i=0; i<11; i++){
-        VALOR_INVALIDO[i] = i;
-    }
+    long long int VALOR_INVALIDO = 00000000000;
 
     try{
         cpf_teste->setCPF(VALOR_INVALIDO);
