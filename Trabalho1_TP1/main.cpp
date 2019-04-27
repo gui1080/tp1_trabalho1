@@ -263,15 +263,15 @@ int main()
                                 break;
     }
 
-    TUFaixa_Etaria testez;
+//    TUFaixa_Etaria teste12;
 
-    switch(teste8.run()){
+ /*   switch(teste12.run()){
         case TUFaixa_Etaria::SUCESSO: cout << "Sucesso ao criar faixa etaria!" << endl;
                                 break;
         case TUFaixa_Etaria::FALHA  : cout << "Falha ao criar faixa etaria!" << endl;
                                 break;
     }
-
+/*
 /*
 
     TUData_Validade_Cartao_Credito teste11;
