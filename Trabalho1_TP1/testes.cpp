@@ -859,7 +859,7 @@ void TUNome_de_Evento::setUp(){
 }
 void TUNome_de_Evento::tearDown(){
     delete evento_teste;
-    cout << "Finalizando teste de Cidade" << endl;
+    cout << "Finalizando teste de Nome de Evento" << endl;
 }
 void TUNome_de_Evento::testarCenarioSucesso(){
 
