@@ -237,7 +237,7 @@ public:
 
         void setCPF (long long int) throw (invalid_argument);
 
-        int getCPF () {
+        long long int getCPF () {
             return num_cpf;
         }
 };
