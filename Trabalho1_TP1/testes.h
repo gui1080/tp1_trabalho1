@@ -355,7 +355,6 @@ public:
 
 
 
-/*
 class TUFaixa_Etaria {
 
 private:
@@ -369,6 +368,9 @@ private:
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
+    std::string faixa_inval = "K";
+    std::string faixa_val = "L";
+
 public:
 
     // Definições de constantes para reportar resultado do teste.
@@ -378,7 +380,7 @@ public:
 
     int run();
 };
-*/
+
 
 
 /*

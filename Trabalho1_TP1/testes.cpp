@@ -495,7 +495,6 @@ int TUSenha::run(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*   o teste da faixa etaria não rodou
 
 void TUFaixa_Etaria::setUp(){
     faixa_etaria_teste = new Faixa_Etaria();
@@ -507,8 +506,8 @@ void TUFaixa_Etaria::tearDown(){
 void TUFaixa_Etaria::testarCenarioSucesso(){
 
     try{
-        faixa_etaria_teste->setFaixa_Etaria("12");
-        if ((faixa_etaria_teste->getFaixa_Etaria()) != "12")
+        faixa_etaria_teste->setFaixa_Etaria(faixa_val);
+        if ((faixa_val.compare(faixa_etaria_teste->getFaixa_Etaria())) != 0)
             estado = FALHA;
     }
     catch(invalid_argument excecao){
@@ -518,7 +517,7 @@ void TUFaixa_Etaria::testarCenarioSucesso(){
 void TUFaixa_Etaria::testarCenarioFalha(){
 
     try{
-        faixa_etaria_teste->setFaixa_Etaria("42");
+        faixa_etaria_teste->setFaixa_Etaria(faixa_inval);
         estado = FALHA;
     }
     catch(invalid_argument excecao){
@@ -533,7 +532,7 @@ int TUFaixa_Etaria::run(){
     return estado;
 }
 
-*/
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

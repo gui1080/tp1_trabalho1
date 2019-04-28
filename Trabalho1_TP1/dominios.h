@@ -200,7 +200,7 @@ public:
 
 class Faixa_Etaria{
 private:
-        string faixa_etaria;
+        std::string faixa_etaria;
 
         // L, 10, 12, 14, 16 OU 18
 

@@ -297,16 +297,16 @@ int main()
 
 
 
-/*
+
     TUFaixa_Etaria testez;
 
-    switch(teste8.run()){
+    switch(testez.run()){
         case TUFaixa_Etaria::SUCESSO: cout << "Sucesso ao criar faixa etaria!" << endl;
                                 break;
         case TUFaixa_Etaria::FALHA  : cout << "Falha ao criar faixa etaria!" << endl;
                                 break;
     }
-*/
+
 
 
 /*
