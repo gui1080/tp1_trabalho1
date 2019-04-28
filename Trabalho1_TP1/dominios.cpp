@@ -27,8 +27,8 @@ void Codigo_de_Evento::setCodigo_de_Evento(int novo_codigo_de_evento) throw (inv
 }
 void Codigo_de_Evento::validar(int novo_codigo_de_evento) throw (invalid_argument){
 
-    if(novo_codigo_de_evento > LIMITE){
-        throw invalid_argument("deu ruim.");
+    if(novo_codigo_de_evento > LIMITE){              //checamos se o tamanho esta correto
+        throw invalid_argument("Codigo de evento é grande demais.");
     }
 
 }
@@ -43,8 +43,8 @@ void Codigo_de_Apresentacao::setCodigo_de_Apresentacao(int novo_codigo_de_aprese
 }
 void Codigo_de_Apresentacao::validar(int novo_codigo_de_apresentacao) throw (invalid_argument){
 
-    if(novo_codigo_de_apresentacao > LIMITE){
-        throw invalid_argument("deu ruim.");
+    if(novo_codigo_de_apresentacao > LIMITE){ //checamos se o tamanho esta correto
+        throw invalid_argument("Codigo de apresentacao é grande demais.");
     }
 
 }
@@ -60,8 +60,7 @@ void Codigo_de_Ingresso::setCodigo_de_Ingresso(int novo_codigo_de_ingresso) thro
 void Codigo_de_Ingresso::validar(int novo_codigo_de_ingresso) throw (invalid_argument){
 
     if(novo_codigo_de_ingresso > LIMITE){
-        //cout << novo_codigo_de_ingresso << endl;
-        throw invalid_argument("numero acima do limite");
+        throw invalid_argument("Codigo de ingresso acima do limite");
     }
 
 }
@@ -76,7 +75,7 @@ void Horario::setHorario(string novo_horario) throw (invalid_argument){
     int k = 0;
 
     while(k < FORMATO_ESPERADO){
-        horario[k] = novo_horario[k];
+        horario[k] = novo_horario[k];              //atribuimos da forma correta
         k++;
     }
     horario[FORMATO_ESPERADO] = '\0';
@@ -91,7 +90,7 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
 
     if(novo_horario[FORMATO_ESPERADO] != '\0'){
     throw invalid_argument("Formato invalido");
-}
+    }
 
     for(i = 0; i < 2; i++){
         HH[i] = novo_horario[i];
@@ -104,20 +103,20 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
         MM[j-3] = novo_horario[j];
     }
     MM[2] = '\0';
-    MMaux = atoi(MM);
+    MMaux = atoi(MM);                 //dividimos a entrada para manipular melhor
 
     if(novo_horario[2] != ':'){
 
     throw invalid_argument("Formato invalido");
     }
 
-    if( 7 > HHaux ||  HHaux > 22 ){
+    if( 7 > HHaux ||  HHaux > 22 ){        //checamos se a hora e valida
 
      throw invalid_argument("HH invalido");
 
     }
 
-    if(MMaux == 0 || MMaux == 15 || MMaux == 30 || MMaux == 45){
+    if(MMaux == 0 || MMaux == 15 || MMaux == 30 || MMaux == 45){       //checamos se o minuto e valido
 
     } else{
         throw invalid_argument("MM invalido");
@@ -136,10 +135,10 @@ void Numero_de_Sala::setNumero_de_Sala(int novo_numero_de_sala) throw (invalid_a
 void Numero_de_Sala::validar(int novo_numero_de_sala) throw (invalid_argument){
 
     if(novo_numero_de_sala >= LIMITE_SUPERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Numero de sala grande demais");         // checamos os limites
     }
     else if(novo_numero_de_sala <= LIMITE_INFERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Numero de sala pequeno demais");
     }
 
 }
@@ -155,10 +154,10 @@ void Preco::setPreco(float novo_preco) throw (invalid_argument){
 void Preco::validar(float novo_preco) throw (invalid_argument){
 
     if(novo_preco > LIMITE_SUPERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Preco muito elevado");         // checamos os limites
     }
     else if(novo_preco < LIMITE_INFERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Preco muito baixo");
     }
 
 }
@@ -168,7 +167,7 @@ void Preco::validar(float novo_preco) throw (invalid_argument){
 void Estados_Brasileiros::setEstado(string novo_estado_br) throw (invalid_argument){
 
     validar(novo_estado_br);
-    estado_br[0] = novo_estado_br[0];
+    estado_br[0] = novo_estado_br[0];             //atribuimos propriamente o novo estado
     estado_br[1] = novo_estado_br[1];
     estado_br[2] = '\0';
 
@@ -182,7 +181,7 @@ void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument
         || (novo_estado_br.compare("DF") == SUCESSO) || (novo_estado_br.compare("ES") == SUCESSO) || (novo_estado_br.compare("GO") == SUCESSO)
         || (novo_estado_br.compare("MA") == SUCESSO) || (novo_estado_br.compare("MT") == SUCESSO) || (novo_estado_br.compare("MS") == SUCESSO)
         || (novo_estado_br.compare("MG") == SUCESSO) || (novo_estado_br.compare("PA") == SUCESSO) || (novo_estado_br.compare("PB") == SUCESSO)
-        || (novo_estado_br.compare("PR") == SUCESSO) || (novo_estado_br.compare("PE") == SUCESSO) || (novo_estado_br.compare("PI") == SUCESSO)
+        || (novo_estado_br.compare("PR") == SUCESSO) || (novo_estado_br.compare("PE") == SUCESSO) || (novo_estado_br.compare("PI") == SUCESSO)          //checamos se os estados sao validos
         || (novo_estado_br.compare("RJ") == SUCESSO) || (novo_estado_br.compare("RN") == SUCESSO) || (novo_estado_br.compare("RS") == SUCESSO)
         || (novo_estado_br.compare("RO") == SUCESSO) || (novo_estado_br.compare("RR") == SUCESSO) || (novo_estado_br.compare("SC") == SUCESSO)
         || (novo_estado_br.compare("SP") == SUCESSO) || (novo_estado_br.compare("SE") == SUCESSO) || (novo_estado_br.compare("TO") == SUCESSO) ) {
@@ -207,8 +206,8 @@ void Classe_Evento::validar(int novo_classe_evento) throw (invalid_argument){
 
     int Num_Opcoes_Evento = 4;
 
-    if(novo_classe_evento < 0 || novo_classe_evento > Num_Opcoes_Evento){
-        throw invalid_argument("opcao nao existe");
+    if(novo_classe_evento < 0 || novo_classe_evento > Num_Opcoes_Evento){          // checamos se a classe de evento esta dentro dos limites
+        throw invalid_argument("Opcao de classe de evento nao existe");
     }
 
 }
@@ -220,7 +219,7 @@ void Faixa_Etaria::setFaixa_Etaria(string novo_faixa_etaria) throw (invalid_argu
     validar(novo_faixa_etaria);
 
     faixa_etaria[0] = novo_faixa_etaria[0];
-    faixa_etaria[1] = novo_faixa_etaria[1];
+    faixa_etaria[1] = novo_faixa_etaria[1];     //atribuimos propriamente a nova faixa etaria
     faixa_etaria[2] = '\0';
 }
 void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
@@ -229,7 +228,7 @@ void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
     int IGUAL = 0;
     //int size = strlen(novo_faixa_etaria);
 
-    if(novo_faixa_etaria.compare("L") == IGUAL || novo_faixa_etaria.compare("10") == IGUAL || novo_faixa_etaria.compare("12") == IGUAL
+    if(novo_faixa_etaria.compare("L") == IGUAL || novo_faixa_etaria.compare("10") == IGUAL || novo_faixa_etaria.compare("12") == IGUAL              //checamos se a entrada dada e uma opcao valida
        || novo_faixa_etaria.compare("14") == IGUAL ||novo_faixa_etaria.compare("16") == IGUAL || novo_faixa_etaria.compare("18") == IGUAL){
 
 
@@ -269,7 +268,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
 
 
     do{
-        array_novo_num_cpf[i] = (novo_num_cpf % 10);
+        array_novo_num_cpf[i] = (novo_num_cpf % 10);             //aplicamos o algoritmo de cpf
         novo_num_cpf /= 10;
         i--;
     } while  (novo_num_cpf > 0);
@@ -277,7 +276,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     j = 10;
 
     for(i=0; i<9; i++){
-        n1= n1 + ((array_novo_num_cpf[i])*j);
+        n1= n1 + ((array_novo_num_cpf[i])*j);           //multiplicamos o array corretamente, e o digito verificador e o modulo de 11 de tal soma
         j--;
     }
     aux1 = (n1 % 11);
@@ -339,7 +338,7 @@ void Senha::setSenha(string novo_senha) throw (invalid_argument){
   int k = 0;
 
     while(k < TAMANHO_ESPERADO){
-        senha[k] = novo_senha[k];
+        senha[k] = novo_senha[k];             //atribuimos e damos limite
         k++;
     }
     senha[TAMANHO_ESPERADO] = '\0';
@@ -353,14 +352,14 @@ void Senha::validar(string novo_classe_senha) throw (invalid_argument){
     bool Possui_dig = false;
 
     if(novo_classe_senha[TAMANHO_ESPERADO] != '\0'){
-        throw invalid_argument("A senha possuiu caracteres a mais");
+        throw invalid_argument("A senha possuiu caracteres a mais do que esperado");
     }
 
     for (i = 0; i < TAMANHO_ESPERADO; i++ ){
 
         if(i > 0){
             aux = novo_classe_senha[i];
-            for(j = i; j > 0; j--){
+            for(j = i; j > 0; j--){     //checamos se algum caractere se repete, percorremos a string 2 vezes
                 if(aux == novo_classe_senha[j - 1])
                     throw invalid_argument("A senha possuiu caracteres repetidos");
             }
@@ -372,7 +371,7 @@ void Senha::validar(string novo_classe_senha) throw (invalid_argument){
         else if ( isupper(novo_classe_senha[i]) ){
             Possui_M = true ;
         }
-        else if ( islower(novo_classe_senha[i]) ){
+        else if ( islower(novo_classe_senha[i]) ){      //checamos os demais caracteres
             Possui_m = true ;
         }
         else if ( isdigit(novo_classe_senha[i]) ){
@@ -395,8 +394,8 @@ void Codigo_de_Seguranca_Cartao_Credito::setCodigo_de_Seguranca_Cartao_Credito(i
 }
 void Codigo_de_Seguranca_Cartao_Credito::validar(int novo_codigo_de_seguranca) throw (invalid_argument){
 
-    if(novo_codigo_de_seguranca > LIMITE){
-        throw invalid_argument("codigo invalido");
+    if(novo_codigo_de_seguranca > LIMITE){                 //checamos se o codigo de seguranca esta abaixo do limite
+        throw invalid_argument("Codigo de seguranca de cartao de credito invalido");
     }
 
 }
@@ -407,7 +406,7 @@ void Numero_Cartao_Credito::setNumero_Cartao_Credito(long long int novo_num_cart
 
 
     char xaux[26];
-    lltoa(novo_num_cartao_credito, xaux, 10);
+    lltoa(novo_num_cartao_credito, xaux, 10);    //passamos para string e validamos o numero
     validar(xaux);
 
     num_cartao_credito = novo_num_cartao_credito;
@@ -419,7 +418,7 @@ void Numero_Cartao_Credito::validar(string novo_num_cartao_credito) throw (inval
     int nParity    = (nDigits-1) % 2;
     char cDigit[2] = "\0";
 
-    for (int i = nDigits; i > 0 ; i--){
+    for (int i = nDigits; i > 0 ; i--){             //aplicamos o algoritmo verificador
 
       cDigit[0]  = novo_num_cartao_credito[i-1];
 
@@ -436,7 +435,7 @@ void Numero_Cartao_Credito::validar(string novo_num_cartao_credito) throw (inval
         throw invalid_argument("numero invalido");
     }
 
-  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -447,7 +446,7 @@ void Data_Validade_Cartao_Credito::setData_Validade_Cartao_Credito(string novo_d
     int k = 0;
 
     while(k < TAMANHO_ESPERADO){
-        data_validade[k] = novo_data_validade[k];
+        data_validade[k] = novo_data_validade[k];        //atribuimos valor de forma correta
         //cout << data_validade[k] << endl;
         k++;
     }
@@ -669,16 +668,12 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
         //char_atual = nova_cidade[i];
 
         if((isalpha(nova_cidade[i]))){
-            tem_letra = 0;
+            tem_letra = 0;   //checamos se existem letras e nao apenas caracteres invalidos
         }
-        //if(i > 0){
-          //  char_anterior = nova_cidade[i-1];
-        //}
-
         aux = nova_cidade[i];
         aux2 = nova_cidade[i+1];
 
-        if(i>0){// checamos se existe letra antes do ponto
+        if(i>0){                                    // checamos se existe letra antes do ponto
             if((nova_cidade[i] == '.')){
                 if( (isalpha(nova_cidade[i-1])) ){
                     SUCESSO = 0;
