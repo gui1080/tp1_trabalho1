@@ -1,7 +1,9 @@
 #include <stdexcept>
 #include <iostream>
 #include <string>
+#include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 #include "dominios.h"
 
@@ -567,7 +569,14 @@ void Nome_de_Evento::validar(string novo_nome_evento) throw (invalid_argument){
 
 void Data::setData(string nova_data) throw (invalid_argument){
 
-    validar(nova_data);
+
+    int data_int = 0;
+
+    int i;
+
+    data_int = ((nova_data[5] - 48) + ((nova_data[4] - 48) *10) + ((nova_data[3] - 48)*100) + ((nova_data[2] - 48) * 1000) + ((nova_data[1] - 48) * 10000) + ((nova_data[0] - 48) * 100000)  );
+
+    validar(data_int);
 
     int k;
 
@@ -578,13 +587,9 @@ void Data::setData(string nova_data) throw (invalid_argument){
     data[6] = '\0';
 
 }
-void Data::validar(string nova_data) throw (invalid_argument){
+void Data::validar(int data_int) throw (invalid_argument){
 
     int SUCESSO = 0;
-
-    char ano[2];
-    char mes[2];
-    char dia[2];
 
     int num_dia = 0;
     int num_mes = 0;
@@ -594,20 +599,18 @@ void Data::validar(string nova_data) throw (invalid_argument){
     int fevereiro = 2;
     int limite_dias_fevereiro_ano_bissexto = 29;
 
-    //dividimos o numeral
-    ano[0] = nova_data[0];
-    ano[1] = nova_data[1];
+    num_dia = data_int % 100;
+    data_int = data_int/100;
 
-    mes[0] = nova_data[2];
-    mes[1] = nova_data[3];
+    //cout<< num_dia;
 
-    ano[0] = nova_data[4];
-    ano[1] = nova_data[5];
+    num_mes = data_int % 100;
+    data_int = data_int/100;
 
-    // convertemos string para int
-    num_dia = atoi(dia);
-    num_mes = atoi(mes);
-    num_ano = atoi(ano);
+    //cout<< num_mes;
+
+    num_ano = data_int%100;
+    data_int = data_int/100;
 
     if((num_dia > 31) || (num_dia <= 0)){
         SUCESSO = 1;
@@ -640,60 +643,62 @@ void Data::validar(string nova_data) throw (invalid_argument){
 void Cidade::setCidade(string nova_cidade) throw (invalid_argument){
 
     validar(nova_cidade);
-
-    int z;
-    int fim_string = 0;
-
-    for(z=0; z<15; z++){
-        cidade[z] = nova_cidade[z];      //passamos nova entrada para classe
-        if(nova_cidade[z] == '.'){
-            //cidade[z + 1] == '\0';        //palavra acaba no ponto
-            fim_string = 1;
-        }
-    }
-
-    if(fim_string == 0){
-        cidade[15] = '\0';          //delimitamos limite
+    int k;
+    while(k < TAMANHO_ESPERADO){
+        cidade[k] = nova_cidade[k];
     }
 
 }
 void Cidade::validar(string nova_cidade) throw (invalid_argument){
 
     int SUCESSO = 0;
-    char char_atual;
-    char char_anterior;
+    char aux;
+    char aux2;
     int string_contem_letra = 1;
-    int i = 0;
+    int i;
+    int tamanho_real_palavra;
 
-    if(nova_cidade[15] != '\0'){
-        SUCESSO = 1;
-    }
+    tamanho_real_palavra = nova_cidade.size();
 
-    while(i < 20){
+    i = 0;
+    while(i < tamanho_real_palavra){
 
-        char_atual = nova_cidade[i];
+        //char_atual = nova_cidade[i];
 
-        if(i > 0){
-            char_anterior = nova_cidade[i-1];
+        //if(i > 0){
+          //  char_anterior = nova_cidade[i-1];
+        //}
+
+        aux = nova_cidade[i];
+        aux2 = nova_cidade[i+1];
+
+        if(i>0){
+            if((nova_cidade[i] == '.') && (isalpha(nova_cidade[i-1]))){         // checamos se existe letra antes do ponto
+                SUCESSO = 0;
+            }
+            else{
+                //SUCESSO = 1;
+            }
         }
-        if((char_atual == '.') && ((char_anterior <= 65) && (char_anterior >= 122)) && (i != 0)){         // checamos se existe letra antes do ponto
-            SUCESSO = 1;
+
+        if(i != (tamanho_real_palavra - 1)){
+            if((isspace(aux)) && (isspace(aux2))){       //checamos espacos vazios seguidos
+              //  SUCESSO = 1;
+            }
+            //cout << aux << endl;
         }
 
-        if((char_atual == ' ') && (char_anterior == ' ')){       //checamos espacos vazios seguidos
-            SUCESSO = 1;
-        }
-
-        if((char_atual >= 65) && (char_atual <=122) && (string_contem_letra != 0)){  //checamos se existe caractere
+        if( (isalpha(nova_cidade[i])) && (string_contem_letra != 0)){  //checamos se existe caractere
             string_contem_letra = 0;
+            //SUCESSO = 1;
         }
 
         i++;
     }
 
 
-    if((SUCESSO != 0) || (string_contem_letra = 1)){
-        throw invalid_argument("estado invalido");
+    if((SUCESSO != 0)){
+        throw invalid_argument("cidade invalida");
     }
 
 }

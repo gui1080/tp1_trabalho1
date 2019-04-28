@@ -395,6 +395,68 @@ public:
     int run();
 };
 
+class TUData{
+
+private:
+
+    Data *data_teste;
+
+    int estado;
+
+
+    //const static string DATA_VALIDA;
+    //const static string DATA_INVALIDA;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+
+};
+
+
+class TUCidade{
+
+private:
+
+    Cidade *cidade_teste;
+
+    int estado;
+
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+
+};
+
+
+/*
+class TUNome_de_Evento{
+
+};
+*/
+
+
 // -------------------------------------- TESTES ENTIDADES --------------------------------------------------
 
 class TUIngresso {

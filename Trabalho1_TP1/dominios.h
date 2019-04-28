@@ -379,9 +379,9 @@ public:
 
 class Data {
 private:
-        char data[6];
-
         const static int LIMITE = 6;
+
+        char data[LIMITE];
 
         // temos que checar se a data tem 6 caracteres
         // formato: DD/MM/AA onde MM <= 12, AA <= 99 e >= 00, DD <= 31
@@ -391,7 +391,7 @@ private:
 
         // Método responsável por validação.
 
-        void validar(string) throw (invalid_argument);
+        void validar(int) throw (invalid_argument);
 
 public:
         // Métodos de acesso.
@@ -405,7 +405,9 @@ public:
 
 class Cidade {
 private:
-        string cidade;
+        const static int TAMANHO_ESPERADO = 15;
+
+        char cidade[TAMANHO_ESPERADO];
 
         // temos que checar se a cidade tem 15 caracteres, cada caractere pode ser letra, espaço ou ponto
         // pelo menos 1 caractere é letra
@@ -423,6 +425,10 @@ public:
 
         string getCidade () {
             return cidade;
+        }
+
+        void printCidade(){
+            cout << cidade << endl;
         }
 };
 
