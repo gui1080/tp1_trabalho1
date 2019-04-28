@@ -73,12 +73,11 @@ void Horario::setHorario(string novo_horario) throw (invalid_argument){
 
     int k = 0;
 
-    while(k < 5){
+    while(k < FORMATO_ESPERADO){
         horario[k] = novo_horario[k];
         k++;
     }
-    horario[5] = '\0';
-
+    horario[FORMATO_ESPERADO] = '\0';
 
 }
 void Horario::validar(string novo_horario) throw (invalid_argument){
@@ -88,7 +87,7 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
     char MM[2];
     int i, j;
 
-    if(novo_horario[5] != '\0'){
+    if(novo_horario[FORMATO_ESPERADO] != '\0'){
     throw invalid_argument("Formato invalido");
 }
 
@@ -99,7 +98,7 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
     HH[2] = '\0';
     HHaux = atoi(HH);
 
-    for(j = 3; j < 5; j++){
+    for(j = 3; j < FORMATO_ESPERADO; j++){
         MM[j-3] = novo_horario[j];
     }
     MM[2] = '\0';
@@ -249,47 +248,77 @@ void CPF::setCPF(long long int novo_num_cpf) throw (invalid_argument){
 }
 void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
 
+    int array_novo_num_cpf[11];
+
+    int n1, n2, aux1, aux2;
+    int digitoverificador1, digitoverificador2;
+
+    int i = 10;
+    int j;
     int SUCESSO = 0;
-    int array_cpf[11];
-    long long int auxiliar = novo_num_cpf;
 
-    int k;
+    digitoverificador1=0;
+    digitoverificador2=0;
+    n1=0;
+    n2=0;
+    aux1=0;
+    aux2=0;
 
-    int digito1, digito2, temp = 0;
 
-    k = 0;
-    while(auxiliar > 10){
-        array_cpf[k] = auxiliar%10;
-        auxiliar = auxiliar/10;
-        k++;
+
+    do{
+        array_novo_num_cpf[i] = (novo_num_cpf % 10);
+        novo_num_cpf /= 10;
+        i--;
+    } while  (novo_num_cpf > 0);
+
+    j = 10;
+
+    for(i=0; i<9; i++){
+        n1= n1 + ((array_novo_num_cpf[i])*j);
+        j--;
+    }
+    aux1 = (n1 % 11);
+    if((aux1==0) || (aux1==1)){
+        digitoverificador1=0;
+    }
+    else {
+        digitoverificador1=(11-aux1);
     }
 
-    for(char i = 0; i < 9; i++)
-        temp += (array_cpf[i] * (10 - i));
+    j=11;
 
-    temp %= 11;
+    for(i=0; i<10; i++){
+        n2 = n2 + ((array_novo_num_cpf[i])*j);
+        j--;
+    }
+    aux2 = (n2 % 11);
 
-    if(temp < 2)
-        digito1 = 0;
-    else
-        digito1 = 11 - temp;
-
-
-    temp = 0;
-    for(char i = 0; i < 10; i++)
-        temp += (array_cpf[i] * (11 - i));
-
-    temp %= 11;
-
-    if(temp < 2)
-        digito2 = 0;
-    else
-        digito2 = 11 - temp;
-
-    if(digito1 == array_cpf[9] && digito2 == array_cpf[10]){
-        //deu certo
+    if((aux2==0) || (aux2==1)){
+        digitoverificador2=0;
     }
     else{
+        digitoverificador2=(11-aux2);
+    }
+
+    //cout <<(aux1);
+
+
+    //int x = digitoverificador1;
+    //int y = novo_num_cpf[9];
+
+    //cout << x;
+    //cout << "\n";
+    //cout << y;
+    //cout << "\n\n";
+    //cout << digitoverificador2;
+    //cout << "\n";
+    //cout << novo_num_cpf[10];
+    //cout << "\n\n\n";
+    //ta indo agr
+
+
+    if( ((array_novo_num_cpf[9]) != (digitoverificador1)) || ((array_novo_num_cpf[10]) != (digitoverificador2) )){
         SUCESSO = 1;
     }
 
@@ -305,22 +334,13 @@ void Senha::setSenha(string novo_senha) throw (invalid_argument){
 
   validar(novo_senha);
 
-  int i = 0;
+  int k = 0;
 
-  senha = (char*)malloc(senha.length()*sizeof(char)+1);
-  for(string ::iterator it = senha.begin(); it <= novo_senha.end(); it++, i++){
-    senha = *it;
-  }
-  senha[i] = '\0';
-
-  /*
-    while(k < 6){
+    while(k < TAMANHO_ESPERADO){
         senha[k] = novo_senha[k];
         k++;
     }
-    senha[6] = '\0';
-    */
-
+    senha[TAMANHO_ESPERADO] = '\0';
 }
 void Senha::validar(string novo_classe_senha) throw (invalid_argument){
 
@@ -330,11 +350,11 @@ void Senha::validar(string novo_classe_senha) throw (invalid_argument){
     bool Possui_m = false;
     bool Possui_dig = false;
 
-    if(novo_classe_senha[6] != '\0'){
+    if(novo_classe_senha[TAMANHO_ESPERADO] != '\0'){
         throw invalid_argument("A senha possuiu caracteres a mais");
     }
 
-    for (i = 0; i < 6; i++ ){
+    for (i = 0; i < TAMANHO_ESPERADO; i++ ){
 
         if(i > 0){
             aux = novo_classe_senha[i];
@@ -424,12 +444,12 @@ void Data_Validade_Cartao_Credito::setData_Validade_Cartao_Credito(string novo_d
 
     int k = 0;
 
-    while(k < 5){
+    while(k < TAMANHO_ESPERADO){
         data_validade[k] = novo_data_validade[k];
         //cout << data_validade[k] << endl;
         k++;
     }
-    data_validade[5] = '\0';
+    data_validade[TAMANHO_ESPERADO] = '\0';
     //cout << data_validade << endl;
 }
 void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (invalid_argument){
@@ -439,7 +459,7 @@ void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (inv
     char YY[2];
     int i, j;
 
-    if(novo_data_validade[5] != '\0'){
+    if(novo_data_validade[TAMANHO_ESPERADO] != '\0'){
         throw invalid_argument("Formato invalido");
     }
 
@@ -450,7 +470,7 @@ void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (inv
     XX[2] = '\0';
     XXaux = atoi(XX);
 
-    for(j = 3; j < 5; j++){
+    for(j = 3; j < TAMANHO_ESPERADO; j++){
         YY[j-3] = novo_data_validade[j];
     }
     YY[2] = '\0';

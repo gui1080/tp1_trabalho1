@@ -322,10 +322,6 @@ public:
     int run();
 };
 
-
-
-////////////////////////////////////////////////////////////////////////
-
 class TUSenha {
 
 private:
@@ -353,8 +349,6 @@ public:
     int run();
 };
 
-
-
 class TUFaixa_Etaria {
 
 private:
@@ -368,9 +362,6 @@ private:
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
-    std::string faixa_inval = "K";
-    std::string faixa_val = "L";
-
 public:
 
     // Definições de constantes para reportar resultado do teste.
@@ -381,9 +372,6 @@ public:
     int run();
 };
 
-
-
-/*
 class TUHorario {
 
 private:
@@ -406,7 +394,35 @@ public:
 
     int run();
 };
-*/
+
+// -------------------------------------- TESTES ENTIDADES --------------------------------------------------
+
+class TUIngresso {
+
+private:
+
+    const static int VALOR_VALIDO   = 12345;
+    const static int VALOR_INVALIDO = 123456;
+
+
+    Ingresso *ingresso;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
 
 
 #endif // TESTES_H_INCLUDED

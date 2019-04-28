@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1556408555 source:c:\users\shudu\desktop\trabalho1_tp1\main.cpp
+1556455023 source:c:\users\shudu\desktop\trabalho1_tp1\main.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -11,30 +11,30 @@
 	"testes.h"
 	"testes.cpp"
 
-1556408549 c:\users\shudu\desktop\trabalho1_tp1\dominios.h
+1556419028 c:\users\shudu\desktop\trabalho1_tp1\dominios.h
 	<stdexcept>
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1556408542 c:\users\shudu\desktop\trabalho1_tp1\dominios.cpp
+1556418910 c:\users\shudu\desktop\trabalho1_tp1\dominios.cpp
 	<stdexcept>
 	<iostream>
 	<string>
 	<stdlib.h>
 	"dominios.h"
 
-1556403536 c:\users\shudu\desktop\trabalho1_tp1\testes.h
+1556455917 c:\users\shudu\desktop\trabalho1_tp1\testes.h
 
-1556378914 c:\users\shudu\desktop\trabalho1_tp1\testes.cpp
+1556457042 c:\users\shudu\desktop\trabalho1_tp1\testes.cpp
 	"testes.h"
 	<iostream>
 
-1556403348 c:\users\shudu\desktop\trabalho1_tp1\entidades.h
+1556415452 c:\users\shudu\desktop\trabalho1_tp1\entidades.h
 	"dominios.h"
 	<string>
 
-1556408562 c:\users\shudu\desktop\trabalho1_tp1\entidades.cpp
+1556418065 c:\users\shudu\desktop\trabalho1_tp1\entidades.cpp
 	"dominios.h"
 	<string>
 

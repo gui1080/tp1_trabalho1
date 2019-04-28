@@ -84,11 +84,14 @@ public:
 
 class Horario{
 private:
-        string horario;
 
         // FORMATO: HH:MM
         // HH é número entre 0 e 22
         // MM é 00,15,30 ou 45
+
+        const static int FORMATO_ESPERADO = 5;
+
+        char horario[FORMATO_ESPERADO];
 
         // Método responsável por validação.
 
@@ -200,7 +203,7 @@ public:
 
 class Faixa_Etaria{
 private:
-        std::string faixa_etaria;
+        char faixa_etaria[2];
 
         // L, 10, 12, 14, 16 OU 18
 
@@ -237,10 +240,6 @@ public:
         int getCPF () {
             return num_cpf;
         }
-
-        void printCPF (){
-            cout << num_cpf << endl;
-        }
 };
 
 class Senha {
@@ -250,7 +249,9 @@ private:
         //não pode ter caracteres repetidos
         //deve possuiu uma letra maiuscula, uma minuscula e um digito
 
-        string senha;
+        const static int TAMANHO_ESPERADO = 6;
+
+        char senha[TAMANHO_ESPERADO];
 
         // Método responsável por validação.
 
@@ -311,7 +312,10 @@ public:
 
 class Data_Validade_Cartao_Credito{
 private:
-        string data_validade;
+
+        const static int TAMANHO_ESPERADO = 5;
+
+        char data_validade[TAMANHO_ESPERADO];
 
         // Método responsável por validação.
 
@@ -375,7 +379,7 @@ public:
 
 class Data {
 private:
-        string data;
+        char data[6];
 
         const static int LIMITE = 6;
 

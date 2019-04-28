@@ -495,6 +495,7 @@ int TUSenha::run(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//   o teste da faixa etaria não rodou
 
 void TUFaixa_Etaria::setUp(){
     faixa_etaria_teste = new Faixa_Etaria();
@@ -506,8 +507,8 @@ void TUFaixa_Etaria::tearDown(){
 void TUFaixa_Etaria::testarCenarioSucesso(){
 
     try{
-        faixa_etaria_teste->setFaixa_Etaria(faixa_val);
-        if ((faixa_val.compare(faixa_etaria_teste->getFaixa_Etaria())) != 0)
+        faixa_etaria_teste->setFaixa_Etaria("12");
+        if ((faixa_etaria_teste->getFaixa_Etaria()) != "12")
             estado = FALHA;
     }
     catch(invalid_argument excecao){
@@ -517,7 +518,7 @@ void TUFaixa_Etaria::testarCenarioSucesso(){
 void TUFaixa_Etaria::testarCenarioFalha(){
 
     try{
-        faixa_etaria_teste->setFaixa_Etaria(faixa_inval);
+        faixa_etaria_teste->setFaixa_Etaria("42");
         estado = FALHA;
     }
     catch(invalid_argument excecao){
@@ -536,23 +537,27 @@ int TUFaixa_Etaria::run(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*   o teste do horario não rodou
+//   o teste do horario não rodou
 
 void TUHorario::setUp(){
     horario_teste = new Horario();
     estado = SUCESSO;
+    cout << endl << "Inicializando teste de Horario" << endl;
 }
 void TUHorario::tearDown(){
     delete horario_teste;
+    cout << "finalizando teste de horario" << endl << endl;
 }
 void TUHorario::testarCenarioSucesso(){
 
     //string VALOR_VALIDO ("08:15");
+    cout << "testando caso de sucesso" << endl;
 
     try{
         horario_teste->setHorario("08:15");
         if (horario_teste->getHorario() == "08:15")
             estado = SUCESSO;
+            cout << "horario " << horario_teste->getHorario() << "  aceito" << endl;
     }
     catch(invalid_argument excecao){
         estado = FALHA;
@@ -561,12 +566,14 @@ void TUHorario::testarCenarioSucesso(){
 void TUHorario::testarCenarioFalha(){
 
     //string VALOR_INVALIDO ("34:72");
+    cout << "testando caso de falha" << endl;
 
     try{
         horario_teste->setHorario("99:99");
         estado = FALHA;
     }
     catch(invalid_argument excecao){
+        cout << "horario 99:99 invalido" << endl;
         return;
     }
 }
@@ -578,4 +585,55 @@ int TUHorario::run(){
     return estado;
 }
 
+//------------------------------------------ TESTES ENTIDADES ------------------------------------
+
+/*
+void TUIngresso::setUp(){
+    ingresso_teste = new Ingresso();
+    estado = SUCESSO;
+    cout << endl << "Inicializando teste de Ingresso" << endl;
+}
+void TUIngresso::tearDown(){
+    delete ingresso_teste;
+    cout << "finalizando teste de ingresso" << endl << endl;
+}
+void TUIngresso::testarCenarioSucesso(){
+
+    cout << "testando caso de sucesso" << endl;
+
+    Codigo_de_Ingresso teste_ingresso_aux;
+
+    try{
+        ingresso_teste->setIngresso(VALOR_VALIDO);
+
+        ingresso_teste->getIngresso(&teste_ingresso_aux);
+        int resultado = teste_ingresso_aux.getCodigo_de_Ingresso();
+
+    cout << "Ingresso -> " << resultado << endl;
+        if (
+            resultado != VALOR_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+    cout << "Ingresso " << resultado << "  aceito" << endl;
+}
+void TUIngresso::testarCenarioFalha(){
+    try{
+        ingresso_teste->setIngresso(VALOR_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        cout << "Ingresso" << VALOR_INVALIDO << "invalido" << endl;
+        return;
+    }
+}
+int TUIngresso::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
 */

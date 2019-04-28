@@ -79,7 +79,7 @@ int main()
     string estado_br_novo ("AM");
     Estados_Brasileiros estado1;
     estado1.setEstado(estado_br_novo);
-    */
+*/
 
     //  Teste que fiz pra saber se a classe de Codigo de Ingresso funcionava
     /*
@@ -97,7 +97,7 @@ int main()
     Horario codigo1;
     codigo1.setHorario("10:30");
     x = codigo1.getHorario();
-    cout << x << endl;
+    cout << "Horario -> " << x << endl;
 
   //  Teste que fiz pra saber se a classe de Classe Evento funcionava
 /*
@@ -114,52 +114,52 @@ int main()
     Senha codigo11;
     codigo11.setSenha("pAa2O3");
     xyz = codigo11.getSenha();
-    cout << xyz << endl;
+    cout << "senha ->" << xyz << endl;
 
 
     //  Teste que fiz pra saber se a classe de Faixa_Etaria funcionava
-/*
-    string x;
+
+    string f;
     //string y("L");
-    Faixa_Etaria codigo1;
-    codigo1.setFaixa_Etaria("12");
-    x = codigo1.getFaixa_Etaria();
-    cout << x << endl;
-*/
+    Faixa_Etaria codigofa;
+    codigofa.setFaixa_Etaria("12");
+    f = codigofa.getFaixa_Etaria();
+    cout << "faixa etaria ->" << f << endl;
+
 
   //  Teste que fiz pra saber se a classe de codigo de segurança funcionava
 /*
-    int x;
-    Codigo_de_Seguranca codigo1;
-    codigo1.setCodigo_de_Seguranca(123);
-    x = codigo1.getCodigo_de_Seguranca();
-    cout << x << endl;
+    int s;
+    Codigo_de_Seguranca_Cartao_Credito codigose;
+    codigose.setCodigo_de_Seguranca_Cartao_Credito(123);
+    s = codigose.getCodigo_de_Seguranca_Cartao_Credito();
+    cout << "codigo de seguranca -> " << s << endl;
 */
 
  //  Teste que fiz pra saber se a classe de Numero de cartao de crecito funcionava
 /*
-    long long int x;
-    Numero_Cartao_Credito codigo1;
-    codigo1.setNumero_Cartao_Credito(30211944335337);
-    x = codigo1.getNumero_Cartao_Credito();
-    cout << x << endl;
-*/
+    long long int ca;
+    Numero_Cartao_Credito codigoca;
+    codigoca.setNumero_Cartao_Credito(30211944335337);
+    ca = codigoca.getNumero_Cartao_Credito();
+    cout << "numero cartao de credito ->" << ca << endl;
 
+*/
     //  Teste que fiz pra saber se a classe de Data de Validade funcionava
 
     string xy;
     Data_Validade_Cartao_Credito codigo23;
     codigo23.setData_Validade_Cartao_Credito("10/39");
     xy = codigo23.getData_Validade_Cartao_Credito();
-    cout << xy << endl;
+    cout << "data de validade -> " << xy << endl;
 
   //  Teste que fiz pra saber se a classe de disponibilidade funcionava
 /*
-    int x;
-    Disponibilidade codigo1;
-    codigo1.setDisponibilidade(50);
-    x = codigo1.getDisponibilidade();
-    cout << x << endl;
+    int d;
+    Disponibilidade codigodi;
+    codigodi.setDisponibilidade(50);
+    d = codigodi.getDisponibilidade();
+    cout << "disponibilidade -> " << d << endl;
 */
 
     TUCodigo_de_Evento teste1;
@@ -264,38 +264,25 @@ int main()
                                 break;
     }
 
-    CPF cpf1;
-    long long int z = 24105288059;
-    cpf1.setCPF(z);
-    long long int k = 0;
-    cpf1.printCPF();
 
-/*
 
-    TUData_Validade_Cartao_Credito teste11;
+    TUData_Validade_Cartao_Credito teste12;
 
-    switch(teste11.run()){
+    switch(teste12.run()){
         case TUData_Validade_Cartao_Credito::SUCESSO: cout << "Sucesso ao criar data de validade do cartao!" << endl;
                                 break;
         case TUData_Validade_Cartao_Credito::FALHA  : cout << "Falha ao criar data de validade do cartao!" << endl;
                                 break;
     }
 
-*/
+    TUSenha teste13;
 
-
- /*   TUSenha teste10;
-
-    switch(teste10.run()){
+    switch(teste13.run()){
         case TUSenha::SUCESSO: cout << "Sucesso ao criar senha!" << endl;
                                 break;
         case TUSenha::FALHA  : cout << "Falha ao criar senha!" << endl;
                                 break;
     }
-
-*/
-
-
 
 
     TUFaixa_Etaria testez;
@@ -307,9 +294,6 @@ int main()
                                 break;
     }
 
-
-
-/*
     TUHorario testex;
 
     switch(testex.run()){
@@ -318,8 +302,6 @@ int main()
         case TUHorario::FALHA  : cout << "Falha ao criar horario!" << endl;
                                 break;
     }
-
-*/
 
 Ingresso testeing;
     testeing.setIngresso(12345);
@@ -336,17 +318,17 @@ Cartao_de_credito testcart;
 
  Numero_Cartao_Credito teste_numero;
  Codigo_de_Seguranca_Cartao_Credito teste_codigo_s;
- //Data_Validade_Cartao_Credito teste_data;
+ Data_Validade_Cartao_Credito teste_data;
 
- //testcart.getCartao_de_credito(&teste_numero, &teste_codigo_s, &teste_data);
+ testcart.getCartao_de_credito(&teste_numero, &teste_codigo_s, &teste_data);
 
  long long int resultado1 = teste_numero.getNumero_Cartao_Credito();
  int resultado2 = teste_codigo_s.getCodigo_de_Seguranca_Cartao_Credito();
- //string resultado3 = teste_data.getData_Validade_Cartao_Credito();
+ string resultado3 = teste_data.getData_Validade_Cartao_Credito();
 
-    //cout << "Numero do cartao de credito -> " << resultado1 << endl;
-    //cout << "Codigo do cartao de credito -> " << resultado2 << endl;
-    //cout << "Data de validade -> " << resultado3 << endl;
+    cout << "Numero do cartao de credito -> " << resultado1 << endl;
+    cout << "Codigo do cartao de credito -> " << resultado2 << endl;
+    cout << "Data de validade -> " << resultado3 << endl;
 
     return 0;
 }
