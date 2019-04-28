@@ -572,7 +572,7 @@ void Data::setData(string nova_data) throw (invalid_argument){
 
     int data_int = 0;
 
-    int i;
+    //int i;
 
     data_int = ((nova_data[5] - 48) + ((nova_data[4] - 48) *10) + ((nova_data[3] - 48)*100) + ((nova_data[2] - 48) * 1000) + ((nova_data[1] - 48) * 10000) + ((nova_data[0] - 48) * 100000)  );
 
@@ -643,9 +643,10 @@ void Data::validar(int data_int) throw (invalid_argument){
 void Cidade::setCidade(string nova_cidade) throw (invalid_argument){
 
     validar(nova_cidade);
-    int k;
+    int k = 0;
     while(k < TAMANHO_ESPERADO){
         cidade[k] = nova_cidade[k];
+        k++;
     }
 
 }

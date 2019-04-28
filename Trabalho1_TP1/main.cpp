@@ -182,11 +182,22 @@ int main()
     TUCidade teste17;
 
     switch(teste17.run()){
-        case TUCidade::SUCESSO: cout << "Sucesso ao criar cidade!" << endl;
+    case TUCidade::SUCESSO: cout << "Sucesso ao criar cidade!" << endl;
                                 break;
-        case TUCidade::FALHA  : cout << "Falha ao criar cidade!" << endl;
+    case TUCidade::FALHA  : cout << "Falha ao criar cidade!" << endl;
                                 break;
     }
+
+    TUNome_de_Evento teste18;
+
+
+    switch(teste18.run()){
+        case TUNome_de_Evento::SUCESSO: cout << "Sucesso ao criar nome de evento!" << endl;
+                                break;
+        case TUNome_de_Evento::FALHA  : cout << "Falha ao criar nome de evento!" << endl;
+                                break;
+    }
+
 
 
 
@@ -212,6 +223,7 @@ cout << "\n\n\n";
 cout << "\n\n\n";
 
 */
+
 Ingresso testeing;
     testeing.setIngresso(12345);
 

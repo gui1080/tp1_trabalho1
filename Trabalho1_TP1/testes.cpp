@@ -850,6 +850,55 @@ int TUCidade::run(){
     return estado;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void TUNome_de_Evento::setUp(){
+    cout << endl << "Inicializando teste de Nome de Evento\n" << endl;
+    evento_teste = new Nome_de_Evento();
+    estado = SUCESSO;
+}
+void TUNome_de_Evento::tearDown(){
+    delete evento_teste;
+    cout << "Finalizando teste de Cidade" << endl;
+}
+void TUNome_de_Evento::testarCenarioSucesso(){
+
+    cout << "Testando caso de sucesso" << endl;
+
+    try{
+        evento_teste->setNome_de_Evento("Show da Hatsune Miku");
+        //cout<<data_teste->getData();
+        if (evento_teste->getNome_de_Evento() != "Show da Hatsune Miku"){
+            estado = FALHA;
+        }
+        else{
+            cout << "Show da Hatsune Miku aceito como evento" << endl;
+        }
+    }
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+}
+void TUNome_de_Evento::testarCenarioFalha(){
+
+    cout << "Testando caso de falha" << endl;
+
+    try{
+        evento_teste->setNome_de_Evento("rafa moreira   777");
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        cout << "rafa moreira   777 nao pode ser um evento" << endl;
+        return;
+    }
+}
+int TUNome_de_Evento::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
 //------------------------------------------ TESTES ENTIDADES ------------------------------------
 
 /*

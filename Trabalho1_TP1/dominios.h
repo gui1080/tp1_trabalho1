@@ -356,9 +356,9 @@ public:
 
 class Nome_de_Evento {
 private:
-        string nome_evento;
 
         const static int LIMITE = 20;
+        char nome_evento[LIMITE];
 
         // temos que checar se o nome tem 20 caracteres, pelo menos 1 letra
         // não pode ter varios espaços vazios em seguida
