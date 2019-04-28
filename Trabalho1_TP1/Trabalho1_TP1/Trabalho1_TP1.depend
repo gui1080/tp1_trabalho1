@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1556418762 source:c:\users\shudu\desktop\trabalho1_tp1\main.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	<stdlib.h>
+	"dominios.h"
+	"dominios.cpp"
+	"entidades.h"
+	"entidades.cpp"
+	"testes.h"
+	"testes.cpp"
+
+1556419028 c:\users\shudu\desktop\trabalho1_tp1\dominios.h
+	<stdexcept>
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1556418910 c:\users\shudu\desktop\trabalho1_tp1\dominios.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	<stdlib.h>
+	"dominios.h"
+
+1556403536 c:\users\shudu\desktop\trabalho1_tp1\testes.h
+
+1556378914 c:\users\shudu\desktop\trabalho1_tp1\testes.cpp
+	"testes.h"
+	<iostream>
+
+1556415452 c:\users\shudu\desktop\trabalho1_tp1\entidades.h
+	"dominios.h"
+	<string>
+
+1556418065 c:\users\shudu\desktop\trabalho1_tp1\entidades.cpp
+	"dominios.h"
+	<string>
+
