@@ -423,7 +423,6 @@ public:
 
 };
 
-
 class TUCidade{
 
 private:
@@ -432,7 +431,6 @@ private:
 
     int estado;
 
-
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -450,30 +448,11 @@ public:
 };
 
 
+/*
 class TUNome_de_Evento{
 
-private:
-
-    Nome_de_Evento *evento_teste;
-
-    int estado;
-
-    void setUp();
-    void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
-
-public:
-
-    // Definições de constantes para reportar resultado do teste.
-
-    const static int SUCESSO =  0;
-    const static int FALHA   = 1;
-
-    int run();
 };
-
-
+*/
 
 // -------------------------------------- TESTES ENTIDADES --------------------------------------------------
 
@@ -485,7 +464,7 @@ private:
     const static int VALOR_INVALIDO = 123456;
 
 
-    Ingresso *ingresso;
+    Ingresso *ingresso_teste;
 
     int estado;
 
@@ -504,5 +483,118 @@ public:
     int run();
 };
 
+class TUCartao_de_credito {
+
+private:
+
+    const static long long int VALOR_VALIDO_N_CARTAO_CREDITO = 30211944335337;
+    const static long long int VALOR_INVALIDO_N_CARTAO_CREDITO = 77777777777777;
+    const static int VALOR_VALIDO_COD_SEGURANCA = 123;
+    const static int VALOR_INVALIDO_COD_SEGURANCA =4567;
+
+    Cartao_de_credito *cartao_de_credito_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
+class TUUsuario {
+
+private:
+
+    const static long long int VALOR_VALIDO_CPF = 69386992086;
+    const static long long int VALOR_INVALIDO_CPF = 00000000000;
+
+    Usuario *usuario_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
+class TUEvento {
+
+private:
+
+    const static int VALOR_VALIDO_C_EVENTO = 365;
+    const static int VALOR_INVALIDO_C_EVENTO = 8765;
+    const static int VALOR_VALIDO_CLASSE_EVENTO = 3;
+    const static int VALOR_INVALIDO_CLASSE_EVENTO = 45;
+
+    Evento *evento_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
+
+class TUApresentacao {
+
+private:
+
+    const static int VALOR_VALIDO_C_APRESENTACAO = 3655;
+    const static int VALOR_INVALIDO_C_APRESENTACAO = 876565;
+    const static float VALOR_VALIDO_PRECO = 3.45;
+    const static float VALOR_INVALIDO_PRECO = 459876;
+    const static int VALOR_VALIDO_SALA = 7;
+    const static int VALOR_INVALIDO_SALA = 19;
+    const static int VALOR_VALIDO_DISPONIBILIDADE = 45;
+    const static int VALOR_INVALIDO_DISPONIBILIDADE = 300;
+
+    Apresentacao *apresentacao_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
+};
 
 #endif // TESTES_H_INCLUDED

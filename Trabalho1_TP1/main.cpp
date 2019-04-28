@@ -19,15 +19,14 @@ Last Update: 29/04/2019
 UnB
 */
 
-//Obs- Seguimos certas convenÃ§Ãµes como as que foram demonstradas em exeplos de sala de aula ao dar nome Ã s variÃ¡veis, classes e testes.
+//Obs- Seguimos certas convenções como as que foram demonstradas em exeplos de sala de aula ao dar nome às variáveis, classes e testes.
 
 using namespace std;
 
 int main()
 {
 
-    system("Color 0A");
-    
+
 ////////////////////////////////////////////////////////////DOMINIOS///////////////////////////////////////////////////////////////////////////////////
 
     TUCodigo_de_Evento teste1;
@@ -183,30 +182,58 @@ int main()
     TUCidade teste17;
 
     switch(teste17.run()){
-    case TUCidade::SUCESSO: cout << "Sucesso ao criar cidade!" << endl;
+        case TUCidade::SUCESSO: cout << "Sucesso ao criar cidade!" << endl;
                                 break;
-    case TUCidade::FALHA  : cout << "Falha ao criar cidade!" << endl;
-                                break;
-    }
-
-    TUNome_de_Evento teste18;
-
-
-    switch(teste18.run()){
-        case TUNome_de_Evento::SUCESSO: cout << "Sucesso ao criar nome de evento!" << endl;
-                                break;
-        case TUNome_de_Evento::FALHA  : cout << "Falha ao criar nome de evento!" << endl;
+        case TUCidade::FALHA  : cout << "Falha ao criar cidade!" << endl;
                                 break;
     }
-
-
-
 
 ////////////////////////////////////////////////////////////ENTIDADES///////////////////////////////////////////////////////////////////////////////////
 
+TUIngresso testeing;
 
+    switch(testeing.run()){
+        case TUIngresso::SUCESSO: cout << "Sucesso ao criar ingresso!" << endl;
+                                break;
+        case TUIngresso::FALHA  : cout << "Falha ao criar ingresso!" << endl;
+                                break;
+    }
 
+     TUCartao_de_credito testecart;
 
+    switch(testecart.run()){
+        case TUCartao_de_credito::SUCESSO: cout << "Sucesso ao criar ingresso!" << endl;
+                                break;
+        case TUCartao_de_credito::FALHA  : cout << "Falha ao criar ingresso!" << endl;
+                                break;
+    }
+
+    TUUsuario testeusu;
+
+    switch(testeusu.run()){
+        case TUUsuario::SUCESSO: cout << "Sucesso ao criar usuario!" << endl;
+                                break;
+        case TUUsuario::FALHA  : cout << "Falha ao criar usuario!" << endl;
+                                break;
+    }
+
+    TUEvento testeeven;
+
+    switch(testeeven.run()){
+        case TUEvento::SUCESSO: cout << "Sucesso ao criar evento!" << endl;
+                                break;
+        case TUEvento::FALHA  : cout << "Falha ao criar evento!" << endl;
+                                break;
+    }
+
+    TUApresentacao testeap;
+
+    switch(testeap.run()){
+        case TUApresentacao::SUCESSO: cout << "Sucesso ao criar apresentacao!" << endl;
+                                break;
+        case TUApresentacao::FALHA  : cout << "Falha ao criar apresentacao!" << endl;
+                                break;
+    }
 
 // AREA DE TESTES, APAGAR DEPOIS //////
 
@@ -224,7 +251,7 @@ cout << "\n\n\n";
 cout << "\n\n\n";
 
 */
-
+/*
 Ingresso testeing;
     testeing.setIngresso(12345);
 
@@ -251,7 +278,7 @@ Cartao_de_credito testcart;
     cout << "Numero do cartao de credito -> " << resultado1 << endl;
     cout << "Codigo do cartao de credito -> " << resultado2 << endl;
     cout << "Data de validade -> " << resultado3 << endl;
-
+*/
 
 
     //daqui rodaremos os testes
@@ -316,14 +343,14 @@ Cartao_de_credito testcart;
     */
 
     //  Teste que fiz pra saber se a classe de Horario funcionava
-
+/*
     string x;
     //string y("08:15");
     Horario codigo1;
     codigo1.setHorario("10:30");
     x = codigo1.getHorario();
     cout << "Horario -> " << x << endl;
-
+*/
   //  Teste que fiz pra saber se a classe de Classe Evento funcionava
 /*
     int x;
@@ -334,16 +361,16 @@ Cartao_de_credito testcart;
 */
 
     //  Teste que fiz pra saber se a classe de Senha funcionava
-
+/*
     string xyz;
     Senha codigo11;
     codigo11.setSenha("pAa2O3");
     xyz = codigo11.getSenha();
     cout << "senha ->" << xyz << endl;
-
+*/
 
     //  Teste que fiz pra saber se a classe de Faixa_Etaria funcionava
-
+/*
     string f;
     //string y("L");
     Faixa_Etaria codigofa;
@@ -351,8 +378,8 @@ Cartao_de_credito testcart;
     f = codigofa.getFaixa_Etaria();
     cout << "faixa etaria ->" << f << endl;
 
-
-  //  Teste que fiz pra saber se a classe de codigo de seguranÃ§a funcionava
+*/
+  //  Teste que fiz pra saber se a classe de codigo de segurança funcionava
 /*
     int s;
     Codigo_de_Seguranca_Cartao_Credito codigose;
@@ -371,13 +398,13 @@ Cartao_de_credito testcart;
 
 */
     //  Teste que fiz pra saber se a classe de Data de Validade funcionava
-
+/*
     string xy;
     Data_Validade_Cartao_Credito codigo23;
     codigo23.setData_Validade_Cartao_Credito("10/39");
     xy = codigo23.getData_Validade_Cartao_Credito();
     cout << "data de validade -> " << xy << endl;
-
+*/
   //  Teste que fiz pra saber se a classe de disponibilidade funcionava
 /*
     int d;

@@ -238,6 +238,7 @@ public:
         void setCPF (long long int) throw (invalid_argument);
 
         long long int getCPF () {
+            cout << num_cpf << endl;
             return num_cpf;
         }
 };
@@ -356,9 +357,9 @@ public:
 
 class Nome_de_Evento {
 private:
+        char nome_evento[20];
 
         const static int LIMITE = 20;
-        char nome_evento[LIMITE];
 
         // temos que checar se o nome tem 20 caracteres, pelo menos 1 letra
         // não pode ter varios espaços vazios em seguida

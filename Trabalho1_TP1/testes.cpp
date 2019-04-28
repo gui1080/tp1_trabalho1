@@ -834,11 +834,11 @@ void TUCidade::testarCenarioFalha(){
     cout << "Testando caso de falha" << endl;
 
     try{
-        cidade_teste->setCidade("aa  aa aa");
+        cidade_teste->setCidade("777777");
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "'aa  aa aa' nao pode ser uma cidade" << endl;
+        cout << "777777 nao pode ser uma cidade" << endl;
         return;
     }
 }
@@ -850,58 +850,8 @@ int TUCidade::run(){
     return estado;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void TUNome_de_Evento::setUp(){
-    cout << endl << "Inicializando teste de Nome de Evento\n" << endl;
-    evento_teste = new Nome_de_Evento();
-    estado = SUCESSO;
-}
-void TUNome_de_Evento::tearDown(){
-    delete evento_teste;
-    cout << "Finalizando teste de Nome de Evento" << endl;
-}
-void TUNome_de_Evento::testarCenarioSucesso(){
-
-    cout << "Testando caso de sucesso" << endl;
-
-    try{
-        evento_teste->setNome_de_Evento("Show da Hatsune Miku");
-        //cout<<data_teste->getData();
-        if (evento_teste->getNome_de_Evento() != "Show da Hatsune Miku"){
-            estado = FALHA;
-        }
-        else{
-            cout << "Show da Hatsune Miku aceito como evento" << endl;
-        }
-    }
-    catch(invalid_argument excecao){
-        estado = FALHA;
-    }
-}
-void TUNome_de_Evento::testarCenarioFalha(){
-
-    cout << "Testando caso de falha" << endl;
-
-    try{
-        evento_teste->setNome_de_Evento("rafa moreira   777");
-        estado = FALHA;
-    }
-    catch(invalid_argument excecao){
-        cout << "rafa moreira   777 nao pode ser um evento" << endl;
-        return;
-    }
-}
-int TUNome_de_Evento::run(){
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
 //------------------------------------------ TESTES ENTIDADES ------------------------------------
 
-/*
 void TUIngresso::setUp(){
     ingresso_teste = new Ingresso();
     estado = SUCESSO;
@@ -916,14 +866,14 @@ void TUIngresso::testarCenarioSucesso(){
     cout << "testando caso de sucesso" << endl;
 
     Codigo_de_Ingresso teste_ingresso_aux;
+    int resultado;
 
     try{
         ingresso_teste->setIngresso(VALOR_VALIDO);
 
         ingresso_teste->getIngresso(&teste_ingresso_aux);
-        int resultado = teste_ingresso_aux.getCodigo_de_Ingresso();
+        resultado = teste_ingresso_aux.getCodigo_de_Ingresso();
 
-    cout << "Ingresso -> " << resultado << endl;
         if (
             resultado != VALOR_VALIDO)
             estado = FALHA;
@@ -931,15 +881,20 @@ void TUIngresso::testarCenarioSucesso(){
     catch(invalid_argument excecao){
         estado = FALHA;
     }
-    cout << "Ingresso " << resultado << "  aceito" << endl;
+    cout << "Ingresso " << endl
+    << "CODIGO DO INGRESSO: " << resultado << endl
+    << "aceito"               << endl;
 }
 void TUIngresso::testarCenarioFalha(){
+
+    cout << "testando caso de falha" << endl;
+
     try{
         ingresso_teste->setIngresso(VALOR_INVALIDO);
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "Ingresso" << VALOR_INVALIDO << "invalido" << endl;
+        cout << "Ingresso " << VALOR_INVALIDO << " invalido" << endl;
         return;
     }
 }
@@ -950,4 +905,351 @@ int TUIngresso::run(){
     tearDown();
     return estado;
 }
-*/
+
+
+void TUCartao_de_credito::setUp(){
+    cartao_de_credito_teste = new Cartao_de_credito();
+    estado = SUCESSO;
+    cout << endl << "Inicializando teste de cartao de credito" << endl;
+}
+void TUCartao_de_credito::tearDown(){
+    delete cartao_de_credito_teste;
+    cout << "finalizando teste de cartao de credito" << endl << endl;
+}
+void TUCartao_de_credito::testarCenarioSucesso(){
+
+    cout << "testando caso de sucesso" << endl;
+
+    Numero_Cartao_Credito teste_numero;
+    Codigo_de_Seguranca_Cartao_Credito teste_codigo_segu;
+    Data_Validade_Cartao_Credito teste_data;
+
+    string VALOR_VALIDO_DATA_VALIDADE = "10/39";
+
+    long long int resultado_numero;
+    int resultado_codigo_seguranca;
+    string resultado_data;
+
+    try{
+
+        //cout << VALOR_VALIDO_N_CARTAO_CREDITO << endl << VALOR_VALIDO_COD_SEGURANCA << endl << VALOR_VALIDO_DATA_VALIDADE << endl;
+        cartao_de_credito_teste->setCartao_de_credito(VALOR_VALIDO_N_CARTAO_CREDITO, VALOR_VALIDO_COD_SEGURANCA, VALOR_VALIDO_DATA_VALIDADE);
+        cartao_de_credito_teste->getCartao_de_credito(&teste_numero, &teste_codigo_segu, &teste_data);
+
+        resultado_numero = teste_numero.getNumero_Cartao_Credito();
+        resultado_codigo_seguranca = teste_codigo_segu.getCodigo_de_Seguranca_Cartao_Credito();
+        cout << "resultado do codigo -> " << resultado_codigo_seguranca << endl;
+        resultado_data = teste_data.getData_Validade_Cartao_Credito();
+
+        if (
+            resultado_numero != VALOR_VALIDO_N_CARTAO_CREDITO ||
+            resultado_codigo_seguranca != VALOR_VALIDO_COD_SEGURANCA ||
+            resultado_data != VALOR_VALIDO_DATA_VALIDADE)
+            estado = FALHA;
+    }
+
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+    cout << "Cartao de credito " << endl
+    << "NUMERO DO CARTAO DE CREDITO: " << resultado_numero           << endl
+    << "CODIGO DE SEGURANCA: "         << resultado_codigo_seguranca << endl
+    << "DATA DE VALIDADE: "            << resultado_data             << endl
+    << "aceito" << endl;
+}
+void TUCartao_de_credito::testarCenarioFalha(){
+
+    cout << "testando caso de falha" << endl;
+    string VALOR_INVALIDO_DATA_VALIDADE = "35/87";
+
+    try{
+        cartao_de_credito_teste->setCartao_de_credito(VALOR_INVALIDO_N_CARTAO_CREDITO, VALOR_INVALIDO_COD_SEGURANCA, VALOR_INVALIDO_DATA_VALIDADE);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        cout << "cartao invalido" << endl;
+        return;
+    }
+}
+int TUCartao_de_credito::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
+void TUUsuario::setUp(){
+    usuario_teste = new Usuario();
+    estado = SUCESSO;
+    cout << endl << "Inicializando teste de Usuario" << endl;
+}
+void TUUsuario::tearDown(){
+    delete usuario_teste;
+    cout << "finalizando teste de usuario" << endl << endl;
+}
+void TUUsuario::testarCenarioSucesso(){
+
+    cout << "testando caso de sucesso" << endl;
+
+    CPF teste_cpf;
+    Senha teste_senha;
+
+    string VALOR_VALIDO_SENHA = "TyU876";
+
+    long long int resultado_cpf;
+    string resultado_senha;
+
+    try{
+
+        //cout << VALOR_VALIDO_N_CARTAO_CREDITO << endl << VALOR_VALIDO_COD_SEGURANCA << endl << VALOR_VALIDO_DATA_VALIDADE << endl;
+        usuario_teste->setUsuario(VALOR_VALIDO_CPF, VALOR_VALIDO_SENHA);
+        usuario_teste->getUsuario(&teste_cpf, &teste_senha);
+
+        resultado_cpf = teste_cpf.getCPF();
+        resultado_senha = teste_senha.getSenha();
+        //cout << "resultado do codigo -> " << resultado_codigo_seguranca << endl;
+
+        if (
+            resultado_cpf != VALOR_VALIDO_CPF ||
+            resultado_senha != VALOR_VALIDO_SENHA){
+
+            estado = FALHA;
+            cout << resultado_cpf << " != " << VALOR_VALIDO_CPF << endl;
+            cout << resultado_senha << "!= " << VALOR_VALIDO_SENHA << endl;
+            }
+
+    }
+
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+    cout << "Usuario" << endl
+    << "CPF: "   << resultado_cpf   << endl
+    << "SENHA: " << resultado_senha << endl
+    << "aceito"  << endl;
+}
+void TUUsuario::testarCenarioFalha(){
+
+    cout << "testando caso de falha" << endl;
+
+    string VALOR_INVALIDO_SENHA = "tyt332";
+
+    try{
+        usuario_teste->setUsuario(VALOR_INVALIDO_CPF, VALOR_INVALIDO_SENHA);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        cout << "Usuario invalido" << endl;
+        return;
+    }
+}
+int TUUsuario::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
+void TUEvento::setUp(){
+    evento_teste = new Evento();
+    estado = SUCESSO;
+    cout << endl << "Inicializando teste de evento" << endl;
+}
+void TUEvento::tearDown(){
+    delete evento_teste;
+    cout << "finalizando teste de evento" << endl << endl;
+}
+void TUEvento::testarCenarioSucesso(){
+
+    cout << "testando caso de sucesso" << endl;
+
+    Codigo_de_Evento teste_codigo;
+    Nome_de_Evento teste_nome;
+    Cidade teste_cidade;
+    Estados_Brasileiros teste_estado;
+    Classe_Evento teste_classe;
+    Faixa_Etaria teste_faixa;
+
+    string VALOR_VALIDO_NOME = "Show da Hatsune";
+    string VALOR_VALIDO_CIDADE = "Brasilia";
+    string VALOR_VALIDO_ESTADOS = "MA";
+    string VALOR_VALIDO_FAIXA = "18";
+
+    int resultado_codigo;
+    string resultado_nome;
+    string resultado_cidade;
+    string resultado_estado;
+    int resultado_classe;
+    string resultado_faixa;
+
+try{
+        evento_teste->setEvento(VALOR_VALIDO_C_EVENTO, VALOR_VALIDO_NOME, VALOR_VALIDO_CIDADE,
+                                VALOR_VALIDO_ESTADOS, VALOR_VALIDO_CLASSE_EVENTO, VALOR_VALIDO_FAIXA);
+
+        cout << VALOR_VALIDO_C_EVENTO << endl;
+        cout << VALOR_VALIDO_NOME << endl;
+        cout << VALOR_VALIDO_CIDADE << endl;
+        cout << VALOR_VALIDO_ESTADOS << endl;
+        cout << VALOR_VALIDO_CLASSE_EVENTO << endl;
+        cout << VALOR_VALIDO_FAIXA << endl;
+
+        evento_teste->getEvento(&teste_codigo, &teste_nome, &teste_cidade, &teste_estado, &teste_classe, &teste_faixa);
+
+cout << "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&" << endl;
+
+        resultado_codigo = teste_codigo.getCodigo_de_Evento();
+        resultado_nome = teste_nome.getNome_de_Evento();
+        resultado_cidade = teste_cidade.getCidade();
+        resultado_estado = teste_estado.getEstado();
+        resultado_classe = teste_classe.getClasse_Evento();
+        resultado_faixa = teste_faixa.getFaixa_Etaria();
+
+        if (
+            resultado_codigo != VALOR_VALIDO_C_EVENTO ||
+            resultado_nome != VALOR_VALIDO_NOME ||
+            resultado_cidade != VALOR_VALIDO_CIDADE ||
+            resultado_estado != VALOR_VALIDO_ESTADOS ||
+            resultado_classe != VALOR_VALIDO_CLASSE_EVENTO ||
+            resultado_faixa != VALOR_VALIDO_FAIXA){
+
+            estado = FALHA;
+            }
+
+}
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+
+    cout << "Evento " << endl << "CODIGO DE EVENTO: " << resultado_codigo << endl
+    << "NOME: "    << resultado_nome   << endl
+    << "CIDADE: "  << resultado_cidade << endl
+    << "ESTADO: "  << resultado_estado << endl
+    << "CLASSE: "  << resultado_classe << endl
+    << "FAIXA: "   << resultado_faixa  << endl
+    << "aceito" << endl;
+}
+void TUEvento::testarCenarioFalha(){
+
+    cout << "testando caso de falha" << endl;
+
+    string VALOR_INVALIDO_NOME = "Show     da Hatsune";
+    string VALOR_INVALIDO_CIDADE = "BRASILIA.EWS   TY";
+    string VALOR_INVALIDO_ESTADOS = "KA";
+    string VALOR_INVALIDO_FAIXA = "34";
+
+    try{
+        evento_teste->setEvento(VALOR_INVALIDO_C_EVENTO, VALOR_INVALIDO_NOME, VALOR_INVALIDO_CIDADE,
+                                VALOR_INVALIDO_ESTADOS, VALOR_INVALIDO_CLASSE_EVENTO, VALOR_INVALIDO_FAIXA);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        cout << "evento invalido" << endl;
+        return;
+    }
+}
+int TUEvento::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
+void TUApresentacao::setUp(){
+    apresentacao_teste = new Apresentacao();
+    estado = SUCESSO;
+    cout << endl << "Inicializando teste de apesentacao" << endl;
+}
+void TUApresentacao::tearDown(){
+    delete apresentacao_teste;
+    cout << "finalizando teste de apresentacao" << endl << endl;
+}
+void TUApresentacao::testarCenarioSucesso(){
+
+    cout << "testando caso de sucesso" << endl;
+
+    Codigo_de_Apresentacao teste_codigo;
+    Data teste_data;
+    Horario teste_horario;
+    Preco teste_preco;
+    Numero_de_Sala teste_sala;
+    Disponibilidade teste_disponibilidade;
+
+    string VALOR_VALIDO_DATA = "121220";
+    string VALOR_VALIDO_HORARIO = "10:30";
+
+    int resultado_codigo;
+    string resultado_data;
+    string resultado_horario;
+    float resultado_preco;
+    int resultado_sala;
+    int resultado_disponibilidade;
+
+    try{
+
+        //cout << VALOR_VALIDO_N_CARTAO_CREDITO << endl << VALOR_VALIDO_COD_SEGURANCA << endl << VALOR_VALIDO_DATA_VALIDADE << endl;
+        apresentacao_teste->setApresentacao(VALOR_VALIDO_C_APRESENTACAO, VALOR_VALIDO_DATA, VALOR_VALIDO_HORARIO,
+                                VALOR_VALIDO_PRECO, VALOR_VALIDO_SALA, VALOR_VALIDO_DISPONIBILIDADE);
+        apresentacao_teste->getApresentacao(&teste_codigo, &teste_data, &teste_horario, &teste_preco, &teste_sala, &teste_disponibilidade);
+
+        resultado_codigo = teste_codigo.getCodigo_de_Apresentacao();
+        resultado_data = teste_data.getData();
+        resultado_horario = teste_horario.getHorario();
+        resultado_preco = teste_preco.getPreco();
+        resultado_sala = teste_sala.getNumero_de_Sala();
+        resultado_disponibilidade = teste_disponibilidade.getDisponibilidade();
+
+        if (
+            resultado_codigo != VALOR_VALIDO_C_APRESENTACAO ||
+            resultado_data != VALOR_VALIDO_DATA ||
+            resultado_horario != VALOR_VALIDO_HORARIO ||
+            resultado_preco != VALOR_VALIDO_PRECO ||
+            resultado_sala != VALOR_VALIDO_SALA ||
+            resultado_disponibilidade != VALOR_VALIDO_DISPONIBILIDADE)
+            estado = FALHA;
+            cout << "oh la ai, deu ruim" << endl;
+    }
+
+    catch(invalid_argument excecao){
+        estado = FALHA;
+    }
+    cout << "Apresentacao " << endl
+    << "CODIGO: "          << resultado_codigo          << endl
+    << "DATA: "            << resultado_data            << endl
+    << "HORARIO: "         << resultado_horario         << endl
+    << "PRECO: "           << resultado_preco           << endl
+    << "SALA: "            << resultado_sala            << endl
+    << "DISPONIBILIDADE: " << resultado_disponibilidade <<  endl
+    << "aceito"            << endl;
+}
+void TUApresentacao::testarCenarioFalha(){
+
+    cout << "testando caso de falha" << endl;
+
+    string VALOR_INVALIDO_DATA = "189840";
+    string VALOR_INVALIDO_HORARIO = "00:39";
+
+
+    try{
+        apresentacao_teste->setApresentacao(VALOR_INVALIDO_C_APRESENTACAO, VALOR_INVALIDO_DATA, VALOR_INVALIDO_HORARIO,
+                                VALOR_INVALIDO_PRECO, VALOR_INVALIDO_SALA, VALOR_INVALIDO_DISPONIBILIDADE);
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao){
+        cout << "Apresentacao invalida" << endl;
+        return;
+    }
+}
+int TUApresentacao::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+

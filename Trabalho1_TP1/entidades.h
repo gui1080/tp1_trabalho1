@@ -17,7 +17,7 @@ private:
 
 public:
 
-    void setUsuario(int novo_num_cpf, string novo_senha) throw (invalid_argument);
+    void setUsuario(long long int novo_num_cpf, string novo_senha) throw (invalid_argument);
 
     void getUsuario(CPF *cpf_f, Senha *senha_f);
 };

@@ -38,3 +38,44 @@
 	"dominios.h"
 	<string>
 
+1556477380 source:c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\main.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	<stdlib.h>
+	"dominios.h"
+	"dominios.cpp"
+	"entidades.h"
+	"entidades.cpp"
+	"testes.h"
+	"testes.cpp"
+
+1556484483 c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\dominios.h
+	<stdexcept>
+	<iostream>
+	<string>
+	<stdlib.h>
+
+1556452808 c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\dominios.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"dominios.h"
+
+1556481065 c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\entidades.h
+	"dominios.h"
+	<string>
+
+1556485020 c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\entidades.cpp
+	"dominios.h"
+	<string>
+
+1556474950 c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\testes.h
+
+1556484228 c:\users\shudu\desktop\tp1_trabalho1-master2\trabalho1_tp1\testes.cpp
+	"testes.h"
+	<iostream>
+
