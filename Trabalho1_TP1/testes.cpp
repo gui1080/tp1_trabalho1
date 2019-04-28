@@ -834,11 +834,11 @@ void TUCidade::testarCenarioFalha(){
     cout << "Testando caso de falha" << endl;
 
     try{
-        cidade_teste->setCidade("777777");
+        cidade_teste->setCidade("aa  aa aa");
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "777777 nao pode ser uma cidade" << endl;
+        cout << "'aa  aa aa' nao pode ser uma cidade" << endl;
         return;
     }
 }

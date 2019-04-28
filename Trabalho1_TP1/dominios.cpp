@@ -652,12 +652,14 @@ void Cidade::setCidade(string nova_cidade) throw (invalid_argument){
 }
 void Cidade::validar(string nova_cidade) throw (invalid_argument){
 
+
     int SUCESSO = 0;
     char aux;
     char aux2;
     int string_contem_letra = 1;
     int i;
     int tamanho_real_palavra;
+    int tem_letra = 1;
 
     tamanho_real_palavra = nova_cidade.size();
 
@@ -666,6 +668,9 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
 
         //char_atual = nova_cidade[i];
 
+        if((isalpha(nova_cidade[i]))){
+            tem_letra = 0;
+        }
         //if(i > 0){
           //  char_anterior = nova_cidade[i-1];
         //}
@@ -673,33 +678,36 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
         aux = nova_cidade[i];
         aux2 = nova_cidade[i+1];
 
-        if(i>0){
-            if((nova_cidade[i] == '.') && (isalpha(nova_cidade[i-1]))){         // checamos se existe letra antes do ponto
-                SUCESSO = 0;
-            }
-            else{
-                //SUCESSO = 1;
+        if(i>0){// checamos se existe letra antes do ponto
+            if((nova_cidade[i] == '.')){
+                if( (isalpha(nova_cidade[i-1])) ){
+                    SUCESSO = 0;
+                }
+                else{
+                    SUCESSO = 1;
+                }
             }
         }
 
         if(i != (tamanho_real_palavra - 1)){
             if((isspace(aux)) && (isspace(aux2))){       //checamos espacos vazios seguidos
-              //  SUCESSO = 1;
+                SUCESSO = 1;
             }
-            //cout << aux << endl;
         }
 
-        if( (isalpha(nova_cidade[i])) && (string_contem_letra != 0)){  //checamos se existe caractere
-            string_contem_letra = 0;
-            //SUCESSO = 1;
-        }
 
         i++;
     }
 
+    if(tem_letra == 1){
+        SUCESSO = 1;
+    }
 
     if((SUCESSO != 0)){
         throw invalid_argument("cidade invalida");
     }
 
 }
+
+
+
