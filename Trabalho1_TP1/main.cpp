@@ -264,6 +264,12 @@ int main()
                                 break;
     }
 
+    CPF cpf1;
+    long long int z = 24105288059;
+    cpf1.setCPF(z);
+    long long int k = 0;
+    cpf1.printCPF();
+
 /*
 
     TUData_Validade_Cartao_Credito teste11;

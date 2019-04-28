@@ -249,77 +249,47 @@ void CPF::setCPF(long long int novo_num_cpf) throw (invalid_argument){
 }
 void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
 
-    int array_novo_num_cpf[11];
-
-    int n1, n2, aux1, aux2;
-    int digitoverificador1, digitoverificador2;
-
-    int i = 10;
-    int j;
     int SUCESSO = 0;
+    int array_cpf[11];
+    long long int auxiliar = novo_num_cpf;
 
-    digitoverificador1=0;
-    digitoverificador2=0;
-    n1=0;
-    n2=0;
-    aux1=0;
-    aux2=0;
+    int k;
 
+    int digito1, digito2, temp = 0;
 
-
-    do{
-        array_novo_num_cpf[i] = (novo_num_cpf % 10);
-        novo_num_cpf /= 10;
-        i--;
-    } while  (novo_num_cpf > 0);
-
-    j = 10;
-
-    for(i=0; i<9; i++){
-        n1= n1 + ((array_novo_num_cpf[i])*j);
-        j--;
-    }
-    aux1 = (n1 % 11);
-    if((aux1==0) || (aux1==1)){
-        digitoverificador1=0;
-    }
-    else {
-        digitoverificador1=(11-aux1);
+    k = 0;
+    while(auxiliar > 10){
+        array_cpf[k] = auxiliar%10;
+        auxiliar = auxiliar/10;
+        k++;
     }
 
-    j=11;
+    for(char i = 0; i < 9; i++)
+        temp += (array_cpf[i] * (10 - i));
 
-    for(i=0; i<10; i++){
-        n2 = n2 + ((array_novo_num_cpf[i])*j);
-        j--;
-    }
-    aux2 = (n2 % 11);
+    temp %= 11;
 
-    if((aux2==0) || (aux2==1)){
-        digitoverificador2=0;
+    if(temp < 2)
+        digito1 = 0;
+    else
+        digito1 = 11 - temp;
+
+
+    temp = 0;
+    for(char i = 0; i < 10; i++)
+        temp += (array_cpf[i] * (11 - i));
+
+    temp %= 11;
+
+    if(temp < 2)
+        digito2 = 0;
+    else
+        digito2 = 11 - temp;
+
+    if(digito1 == array_cpf[9] && digito2 == array_cpf[10]){
+        //deu certo
     }
     else{
-        digitoverificador2=(11-aux2);
-    }
-
-    //cout <<(aux1);
-
-
-    //int x = digitoverificador1;
-    //int y = novo_num_cpf[9];
-
-    //cout << x;
-    //cout << "\n";
-    //cout << y;
-    //cout << "\n\n";
-    //cout << digitoverificador2;
-    //cout << "\n";
-    //cout << novo_num_cpf[10];
-    //cout << "\n\n\n";
-    //ta indo agr
-
-
-    if( ((array_novo_num_cpf[9]) != (digitoverificador1)) || ((array_novo_num_cpf[10]) != (digitoverificador2) )){
         SUCESSO = 1;
     }
 
@@ -335,13 +305,22 @@ void Senha::setSenha(string novo_senha) throw (invalid_argument){
 
   validar(novo_senha);
 
-  int k = 0;
+  int i = 0;
 
+  senha = (char*)malloc(senha.length()*sizeof(char)+1);
+  for(string ::iterator it = senha.begin(); it <= novo_senha.end(); it++, i++){
+    senha = *it;
+  }
+  senha[i] = '\0';
+
+  /*
     while(k < 6){
         senha[k] = novo_senha[k];
         k++;
     }
     senha[6] = '\0';
+    */
+
 }
 void Senha::validar(string novo_classe_senha) throw (invalid_argument){
 

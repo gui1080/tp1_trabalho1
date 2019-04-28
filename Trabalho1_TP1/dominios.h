@@ -237,6 +237,10 @@ public:
         int getCPF () {
             return num_cpf;
         }
+
+        void printCPF (){
+            cout << num_cpf << endl;
+        }
 };
 
 class Senha {
