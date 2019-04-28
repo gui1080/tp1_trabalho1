@@ -19,14 +19,15 @@ Last Update: 29/04/2019
 UnB
 */
 
-//Obs- Seguimos certas convenções como as que foram demonstradas em exeplos de sala de aula ao dar nome às variáveis, classes e testes.
+//Obs- Seguimos certas convenÃ§Ãµes como as que foram demonstradas em exeplos de sala de aula ao dar nome Ã s variÃ¡veis, classes e testes.
 
 using namespace std;
 
 int main()
 {
 
-
+system("Color 0A");
+    
 ////////////////////////////////////////////////////////////DOMINIOS///////////////////////////////////////////////////////////////////////////////////
 
     TUCodigo_de_Evento teste1;
@@ -351,7 +352,7 @@ Cartao_de_credito testcart;
     cout << "faixa etaria ->" << f << endl;
 
 
-  //  Teste que fiz pra saber se a classe de codigo de segurança funcionava
+  //  Teste que fiz pra saber se a classe de codigo de seguranÃ§a funcionava
 /*
     int s;
     Codigo_de_Seguranca_Cartao_Credito codigose;
