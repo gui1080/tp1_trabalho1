@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <conio.h>
 
 #include "dominios.h"
 #include "dominios.cpp"
@@ -10,6 +11,7 @@
 
 #include "testes.h"
 #include "testes.cpp"
+
 
 /*
 Feito por:
@@ -23,10 +25,9 @@ UnB
 
 using namespace std;
 
-int main()
-{
+int main(){
 
-
+    system("Color 0A");
 ////////////////////////////////////////////////////////////DOMINIOS///////////////////////////////////////////////////////////////////////////////////
 
     TUCodigo_de_Evento teste1;
@@ -188,9 +189,24 @@ int main()
                                 break;
     }
 
+    TUNome_de_Evento teste18;
+
+
+    switch(teste18.run()){
+        case TUNome_de_Evento::SUCESSO: cout << "Sucesso ao criar nome de evento!" << endl;
+                                break;
+        case TUNome_de_Evento::FALHA  : cout << "Falha ao criar nome de evento!" << endl;
+                                break;
+    }
+
+
+
+
+    cout<<"\n\n\n\n"<<endl;
+
 ////////////////////////////////////////////////////////////ENTIDADES///////////////////////////////////////////////////////////////////////////////////
 
-TUIngresso testeing;
+    TUIngresso testeing;
 
     switch(testeing.run()){
         case TUIngresso::SUCESSO: cout << "Sucesso ao criar ingresso!" << endl;
@@ -234,6 +250,8 @@ TUIngresso testeing;
         case TUApresentacao::FALHA  : cout << "Falha ao criar apresentacao!" << endl;
                                 break;
     }
+
+    cout<<"\n\n\n\n"<<endl;
 
 // AREA DE TESTES, APAGAR DEPOIS //////
 

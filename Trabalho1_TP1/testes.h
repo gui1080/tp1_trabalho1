@@ -448,11 +448,30 @@ public:
 };
 
 
-/*
 class TUNome_de_Evento{
 
+private:
+
+    Nome_de_Evento *evento_teste;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = 1;
+
+    int run();
 };
-*/
+
+
 
 // -------------------------------------- TESTES ENTIDADES --------------------------------------------------
 
