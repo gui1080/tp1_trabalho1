@@ -391,7 +391,7 @@ void Senha::validar(string novo_classe_senha) throw (invalid_argument){
 void Codigo_de_Seguranca_Cartao_Credito::setCodigo_de_Seguranca_Cartao_Credito(int novo_codigo_de_seguranca) throw (invalid_argument){
 
     validar(novo_codigo_de_seguranca);
-    codigo_de_seguranca = novo_codigo_de_seguranca;
+    this->codigo_de_seguranca = novo_codigo_de_seguranca;
 
 }
 void Codigo_de_Seguranca_Cartao_Credito::validar(int novo_codigo_de_seguranca) throw (invalid_argument){
@@ -520,7 +520,6 @@ void Disponibilidade::validar(int novo_disponibilidade) throw (invalid_argument)
 void Nome_de_Evento::setNome_de_Evento(string novo_nome_evento) throw (invalid_argument){
 
     validar(novo_nome_evento);
-
     int j;
 
     for(j= 0; j<20 ; j++){

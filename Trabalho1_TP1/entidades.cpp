@@ -1,10 +1,11 @@
 #include "dominios.h"
 #include <string>
+#include <iostream>
 
 void Usuario::setUsuario(long long int novo_num_cpf, string novo_senha) throw (invalid_argument){
 
-cpf.setCPF(novo_num_cpf);
-senha.setSenha(novo_senha);
+    cpf.setCPF(novo_num_cpf);
+    senha.setSenha(novo_senha);
 
 }
 
@@ -32,19 +33,19 @@ void Ingresso::getIngresso(Codigo_de_Ingresso *codigo_f){
 }
 
 
-void Cartao_de_credito::setCartao_de_credito(long long int numero_f, int codigo_f, string data_f) throw (invalid_argument){
+void Cartao_de_credito::setCartao_de_credito(long long int numero_f, int codigo_cartao_f, string data_f) throw (invalid_argument){
 
 numero.setNumero_Cartao_Credito(numero_f);
-codigo.setCodigo_de_Seguranca_Cartao_Credito(codigo_f);
+codigo_cartao.setCodigo_de_Seguranca_Cartao_Credito(codigo_cartao_f);
 data.setData_Validade_Cartao_Credito(data_f);
 
 }
 
-void Cartao_de_credito::getCartao_de_credito(Numero_Cartao_Credito *numero_f, Codigo_de_Seguranca_Cartao_Credito *codigo_f, Data_Validade_Cartao_Credito *data_f){
+void Cartao_de_credito::getCartao_de_credito(Numero_Cartao_Credito *numero_f, Codigo_de_Seguranca_Cartao_Credito *codigo_cartao_f, Data_Validade_Cartao_Credito *data_f){
 
     numero_f->setNumero_Cartao_Credito(this->numero.getNumero_Cartao_Credito());
 
-    codigo_f->setCodigo_de_Seguranca_Cartao_Credito(this->codigo.getCodigo_de_Seguranca_Cartao_Credito());
+    codigo_cartao_f->setCodigo_de_Seguranca_Cartao_Credito(this->codigo_cartao.getCodigo_de_Seguranca_Cartao_Credito());
 
     data_f->setData_Validade_Cartao_Credito(this->data.getData_Validade_Cartao_Credito());
 
@@ -103,7 +104,7 @@ void Apresentacao::getApresentacao(Codigo_de_Apresentacao *codigo_f, Data *data_
     codigo_f->setCodigo_de_Apresentacao(this->codigo.getCodigo_de_Apresentacao());
     data_f->setData(this->data.getData());
     cout << "-------------------------------------------------------------------------------" << endl;
-    cout << this->data.getData()  << endl << endl;
+    cout << this->data.getData() << endl << endl;
     horario_f->setHorario(this->horario.getHorario());
     preco_f->setPreco(this->preco.getPreco());
     sala_f->setNumero_de_Sala(this->sala.getNumero_de_Sala());

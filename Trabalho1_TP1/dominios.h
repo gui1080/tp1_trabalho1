@@ -91,7 +91,7 @@ private:
 
         const static int FORMATO_ESPERADO = 5;
 
-        char horario[FORMATO_ESPERADO];
+        char horario[FORMATO_ESPERADO+1];
 
         // Método responsável por validação.
 
@@ -159,7 +159,7 @@ private:
 
         const static int FORMATO_ESPERADO = 2;
 
-        char estado_br[FORMATO_ESPERADO];
+        char estado_br[FORMATO_ESPERADO+1];
 
         // temos que checar se o estado existe
         // suponho que siglas de estado se escrevem em letras maiusculas
@@ -209,7 +209,7 @@ private:
 
         const static int FORMATO_ESPERADO = 2;
 
-        char faixa_etaria[FORMATO_ESPERADO];
+        char faixa_etaria[FORMATO_ESPERADO+1];
 
         // L, 10, 12, 14, 16 OU 18
 
@@ -258,7 +258,7 @@ private:
 
         const static int TAMANHO_ESPERADO = 6;
 
-        char senha[TAMANHO_ESPERADO];
+        char senha[TAMANHO_ESPERADO+1];
 
         // Método responsável por validação.
 
@@ -322,7 +322,7 @@ private:
 
         const static int TAMANHO_ESPERADO = 5;
 
-        char data_validade[TAMANHO_ESPERADO];
+        char data_validade[TAMANHO_ESPERADO+1];
 
         // Método responsável por validação.
 
@@ -366,7 +366,7 @@ private:
 
         const static int LIMITE = 20;
 
-        char nome_evento[LIMITE];
+        char nome_evento[LIMITE+1];
 
         // temos que checar se o nome tem 20 caracteres, pelo menos 1 letra
         // não pode ter varios espaços vazios em seguida
@@ -389,7 +389,7 @@ class Data {
 private:
         const static int LIMITE = 6;
 
-        char data[LIMITE];
+        char data[LIMITE+1];
 
         // temos que checar se a data tem 6 caracteres
         // formato: DD/MM/AA onde MM <= 12, AA <= 99 e >= 00, DD <= 31
@@ -418,7 +418,7 @@ class Cidade {
 private:
         const static int TAMANHO_ESPERADO = 15;
 
-        char cidade[TAMANHO_ESPERADO];
+        char cidade[TAMANHO_ESPERADO+1];
 
         // temos que checar se a cidade tem 15 caracteres, cada caractere pode ser letra, espaço ou ponto
         // pelo menos 1 caractere é letra

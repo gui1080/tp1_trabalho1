@@ -41,15 +41,15 @@ class Cartao_de_credito {
 private:
 
     Numero_Cartao_Credito numero;
-    Codigo_de_Seguranca_Cartao_Credito codigo;
+    Codigo_de_Seguranca_Cartao_Credito codigo_cartao;
     Data_Validade_Cartao_Credito data;
 
 
 public:
 
-    void setCartao_de_credito(long long int numero_f, int codigo_f, string data_f) throw (invalid_argument);
+    void setCartao_de_credito(long long int numero_f, int codigo_cartao_f, string data_f) throw (invalid_argument);
 
-    void getCartao_de_credito(Numero_Cartao_Credito *numero_f, Codigo_de_Seguranca_Cartao_Credito *codigo_f, Data_Validade_Cartao_Credito *data_f);
+    void getCartao_de_credito(Numero_Cartao_Credito *numero_f, Codigo_de_Seguranca_Cartao_Credito *codigo_cartao_f, Data_Validade_Cartao_Credito *data_f);
 
 };
 

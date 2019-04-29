@@ -2,61 +2,25 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="dominios.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="10124" topLine="35" />
+			<Cursor1 position="571" topLine="26" />
 		</Cursor>
-		<Folding>
-			<Collapse line="18" />
-			<Collapse line="40" />
-		</Folding>
 	</File>
-	<File name="dominios.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="dominios.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="14792" topLine="92" />
+			<Cursor1 position="11760" topLine="379" />
 		</Cursor>
 		<Folding>
 			<Collapse line="21" />
-			<Collapse line="27" />
-			<Collapse line="37" />
-			<Collapse line="43" />
-			<Collapse line="53" />
-			<Collapse line="59" />
-			<Collapse line="70" />
-			<Collapse line="84" />
-			<Collapse line="129" />
-			<Collapse line="135" />
-			<Collapse line="148" />
-			<Collapse line="154" />
-			<Collapse line="167" />
-			<Collapse line="175" />
-			<Collapse line="199" />
-			<Collapse line="205" />
-			<Collapse line="217" />
-			<Collapse line="225" />
-			<Collapse line="243" />
-			<Collapse line="250" />
-			<Collapse line="334" />
-			<Collapse line="346" />
-			<Collapse line="389" />
-			<Collapse line="395" />
-			<Collapse line="405" />
-			<Collapse line="414" />
-			<Collapse line="442" />
-			<Collapse line="456" />
-			<Collapse line="499" />
-			<Collapse line="505" />
-			<Collapse line="518" />
-			<Collapse line="531" />
-			<Collapse line="569" />
-			<Collapse line="589" />
-			<Collapse line="642" />
-			<Collapse line="652" />
 		</Folding>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="dominios.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="731" topLine="26" />
+			<Cursor1 position="294" topLine="72" />
 		</Cursor>
+		<Folding>
+			<Collapse line="40" />
+		</Folding>
 	</File>
 </CodeBlocks_layout_file>
