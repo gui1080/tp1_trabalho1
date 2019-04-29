@@ -1,3 +1,13 @@
+/**
+ * @file dominios.cpp
+ *
+ * @brief Arquivo com a implementação dos métodos das classes.
+ *
+ * @author Gabriel e Guilherme
+ *
+ */
+
+
 #include <stdexcept>
 #include <iostream>
 #include <string>
@@ -618,7 +628,7 @@ void Data::validar(int data_int) throw (invalid_argument){
     if((num_mes > 12) || (num_mes <= 0)){
         SUCESSO = 1;
     }
-    if((num_ano > 99) || (num_ano <= 0)){ // ano n�o pode ser 0, no caso, ano 2000 < ano 2019 (caso de evento passado)
+    if((num_ano > 99) || (num_ano <= 0)){ // ano não pode ser 0, no caso, ano 2000 < ano 2019 (caso de evento passado)
         SUCESSO = 1;
     }
 
