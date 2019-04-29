@@ -1,3 +1,13 @@
+/**
+ * @file entidades.cpp
+ *
+ * @brief Arquivo com a declaração das entidades do programa
+ *
+ * @author Gabriel e Guilherme
+ *
+ */
+
+
 #include "dominios.h"
 #include <string>
 #include <iostream>
