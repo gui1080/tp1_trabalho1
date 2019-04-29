@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ *
+ * @brief Arquivo com a implementa√ß√£o b√°sica do programa, onde chamamos os testes.
+ *
+ * @author Gabriel e Guilherme
+ *
+ */
+
+
 #include <stdexcept>
 #include <iostream>
 #include <string>
@@ -21,7 +31,7 @@ Last Update: 29/04/2019
 UnB
 */
 
-//Obs- Seguimos certas convenÁıes como as que foram demonstradas em exeplos de sala de aula ao dar nome ‡s vari·veis, classes e testes.
+//Obs- Seguimos certas conven√ß√µes como as que foram demonstradas em exeplos de sala de aula ao dar nome √†s vari√°veis, classes e testes.
 
 using namespace std;
 
@@ -395,7 +405,7 @@ Cartao_de_credito testcart;
     cout << "faixa etaria ->" << f << endl;
 
 */
-  //  Teste que fiz pra saber se a classe de codigo de seguranÁa funcionava
+  //  Teste que fiz pra saber se a classe de codigo de seguran√ßa funcionava
 /*
     int s;
     Codigo_de_Seguranca_Cartao_Credito codigose;
