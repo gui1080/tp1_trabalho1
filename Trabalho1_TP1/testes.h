@@ -1,3 +1,13 @@
+/**
+ * @file testes.h
+ *
+ * @brief Arquivo com a declaraÃ§Ã£o das classes de teste do programa
+ *
+ * @author Gabriel e Guilherme
+ *
+ */
+
+
 #ifndef TESTES_H_INCLUDED
 #define TESTES_H_INCLUDED
 
@@ -30,7 +40,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -57,7 +67,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -84,7 +94,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -107,7 +117,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -134,7 +144,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -161,7 +171,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -188,7 +198,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -215,7 +225,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -242,7 +252,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -265,7 +275,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -291,7 +301,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -314,7 +324,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -341,7 +351,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -364,7 +374,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -387,7 +397,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -414,7 +424,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -438,7 +448,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -463,7 +473,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -494,7 +504,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -522,7 +532,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -548,7 +558,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -576,7 +586,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
@@ -608,7 +618,7 @@ private:
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
+    // DefiniÃ§Ãµes de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = 1;
