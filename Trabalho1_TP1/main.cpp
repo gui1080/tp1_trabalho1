@@ -30,6 +30,8 @@ int main(){
     system("Color 0A");
 ////////////////////////////////////////////////////////////DOMINIOS///////////////////////////////////////////////////////////////////////////////////
 
+    cout << "--------------------- TESTES DOMINIOS--------------------------" << endl;
+
     TUCodigo_de_Evento teste1;
 
     switch(teste1.run()){
@@ -57,7 +59,7 @@ int main(){
                                 break;
     }
 
-    TUCodigo_de_Ingresso teste4;
+    TUEstados_Brasileiros teste4;
 
     switch(teste4.run()){
         case TUEstados_Brasileiros::SUCESSO: cout << "Sucesso ao criar estado brasileiro!" << endl;
@@ -66,7 +68,7 @@ int main(){
                                 break;
     }
 
-    TUCodigo_de_Ingresso teste5;
+    TUNumero_de_Sala teste5;
 
     switch(teste5.run()){
         case TUNumero_de_Sala::SUCESSO: cout << "Sucesso ao criar numero de sala!" << endl;
@@ -75,7 +77,7 @@ int main(){
                                 break;
     }
 
-    TUCodigo_de_Ingresso teste6;
+    TUPreco teste6;
 
     switch(teste6.run()){
         case TUPreco::SUCESSO: cout << "Sucesso ao criar preco!" << endl;
@@ -84,7 +86,7 @@ int main(){
                                 break;
     }
 
-    TUCodigo_de_Ingresso teste7;
+    TUClasse_Evento teste7;
 
     switch(teste7.run()){
         case TUClasse_Evento::SUCESSO: cout << "Sucesso ao criar classe de evento!" << endl;
@@ -199,13 +201,9 @@ int main(){
                                 break;
     }
 
-
-
-
-    cout<<"\n\n\n\n"<<endl;
-
+//    cout<<"\n\n\n\n"<<endl;
+    cout << "\n--------------------- TESTES ENTIDADES --------------------------" << endl;
 ////////////////////////////////////////////////////////////ENTIDADES///////////////////////////////////////////////////////////////////////////////////
-
     TUIngresso testeing;
 
     switch(testeing.run()){

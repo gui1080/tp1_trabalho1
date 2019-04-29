@@ -28,7 +28,7 @@ void Codigo_de_Evento::setCodigo_de_Evento(int novo_codigo_de_evento) throw (inv
 void Codigo_de_Evento::validar(int novo_codigo_de_evento) throw (invalid_argument){
 
     if(novo_codigo_de_evento > LIMITE){
-        throw invalid_argument("deu ruim.");
+        throw invalid_argument("Codigo de evento invalido");
     }
 
 }
@@ -44,7 +44,7 @@ void Codigo_de_Apresentacao::setCodigo_de_Apresentacao(int novo_codigo_de_aprese
 void Codigo_de_Apresentacao::validar(int novo_codigo_de_apresentacao) throw (invalid_argument){
 
     if(novo_codigo_de_apresentacao > LIMITE){
-        throw invalid_argument("deu ruim.");
+        throw invalid_argument("Codigo de apresentacao invalido");
     }
 
 }
@@ -61,7 +61,7 @@ void Codigo_de_Ingresso::validar(int novo_codigo_de_ingresso) throw (invalid_arg
 
     if(novo_codigo_de_ingresso > LIMITE){
         //cout << novo_codigo_de_ingresso << endl;
-        throw invalid_argument("numero acima do limite");
+        throw invalid_argument("Codigo de ingresso acima do limite");
     }
 
 }
@@ -90,7 +90,7 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
     int i, j;
 
     if(novo_horario[FORMATO_ESPERADO] != '\0'){
-    throw invalid_argument("Formato invalido");
+    throw invalid_argument("Formato invalido de horario (tamanho excedido)");
 }
 
     for(i = 0; i < 2; i++){
@@ -108,7 +108,7 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
 
     if(novo_horario[2] != ':'){
 
-    throw invalid_argument("Formato invalido");
+    throw invalid_argument("Formato invalido de horario");
     }
 
     if( 7 > HHaux ||  HHaux > 22 ){
@@ -136,10 +136,10 @@ void Numero_de_Sala::setNumero_de_Sala(int novo_numero_de_sala) throw (invalid_a
 void Numero_de_Sala::validar(int novo_numero_de_sala) throw (invalid_argument){
 
     if(novo_numero_de_sala >= LIMITE_SUPERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Numero de sala acima do limite superior");
     }
     else if(novo_numero_de_sala <= LIMITE_INFERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Numero de sala abaixo do limite inferior");
     }
 
 }
@@ -155,10 +155,10 @@ void Preco::setPreco(float novo_preco) throw (invalid_argument){
 void Preco::validar(float novo_preco) throw (invalid_argument){
 
     if(novo_preco > LIMITE_SUPERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Preco acima do limite superior");
     }
     else if(novo_preco < LIMITE_INFERIOR){
-        throw invalid_argument("deu ruim");
+        throw invalid_argument("Preco abaixo do limite inferior");
     }
 
 }
@@ -170,7 +170,7 @@ void Estados_Brasileiros::setEstado(string novo_estado_br) throw (invalid_argume
     validar(novo_estado_br);
     estado_br[0] = novo_estado_br[0];
     estado_br[1] = novo_estado_br[1];
-    estado_br[2] = '\0';
+    estado_br[FORMATO_ESPERADO] = '\0';
 
 }
 void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument){
@@ -192,7 +192,6 @@ void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument
     else{
         throw invalid_argument("estado invalido");
     }
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -208,7 +207,7 @@ void Classe_Evento::validar(int novo_classe_evento) throw (invalid_argument){
     int Num_Opcoes_Evento = 4;
 
     if(novo_classe_evento < 0 || novo_classe_evento > Num_Opcoes_Evento){
-        throw invalid_argument("opcao nao existe");
+        throw invalid_argument("opcao de classe de evento nao existe");
     }
 
 }
@@ -221,7 +220,7 @@ void Faixa_Etaria::setFaixa_Etaria(string novo_faixa_etaria) throw (invalid_argu
 
     faixa_etaria[0] = novo_faixa_etaria[0];
     faixa_etaria[1] = novo_faixa_etaria[1];
-    faixa_etaria[2] = '\0';
+    faixa_etaria[FORMATO_ESPERADO] = '\0';
 }
 void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
 
@@ -256,7 +255,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     int digitoverificador1, digitoverificador2;
 
     int i = 10;
-    int j;
+    int j = 0;
     int SUCESSO = 0;
 
     digitoverificador1=0;
@@ -266,12 +265,14 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     aux1=0;
     aux2=0;
 
-
+    for(j=0; j<11; j++){
+        array_novo_num_cpf[j] = 0;
+    }
 
     do{
         array_novo_num_cpf[i] = (novo_num_cpf % 10);
         novo_num_cpf /= 10;
-        i--;
+        i--;///////
     } while  (novo_num_cpf > 0);
 
     j = 10;
@@ -325,7 +326,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     }
 
     if(SUCESSO == 1){
-        throw invalid_argument("cpf invalido");
+        throw invalid_argument("Cpf invalido");
     }
 
 }
@@ -395,8 +396,8 @@ void Codigo_de_Seguranca_Cartao_Credito::setCodigo_de_Seguranca_Cartao_Credito(i
 }
 void Codigo_de_Seguranca_Cartao_Credito::validar(int novo_codigo_de_seguranca) throw (invalid_argument){
 
-    if(novo_codigo_de_seguranca > LIMITE){
-        throw invalid_argument("codigo invalido");
+    if(novo_codigo_de_seguranca > LIMITE || novo_codigo_de_seguranca < 0){
+        throw invalid_argument("codigo de seguranca do cartao invalido");
     }
 
 }
@@ -433,7 +434,7 @@ void Numero_Cartao_Credito::validar(string novo_num_cartao_credito) throw (inval
     }
 
     if(nSum % 10 != 0){
-        throw invalid_argument("numero invalido");
+        throw invalid_argument("Numero de cartao de credito invalido");
     }
 
   }
@@ -462,7 +463,7 @@ void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (inv
     int i, j;
 
     if(novo_data_validade[TAMANHO_ESPERADO] != '\0'){
-        throw invalid_argument("Formato invalido");
+        throw invalid_argument("Formato invalido de data de validade");
     }
 
     for(i = 0; i < 2; i++){
@@ -506,10 +507,10 @@ void Disponibilidade::setDisponibilidade(int novo_disponibilidade) throw (invali
 void Disponibilidade::validar(int novo_disponibilidade) throw (invalid_argument){
 
     if(novo_disponibilidade > LIMITE_SUPERIOR){
-        throw invalid_argument("numero_invalido");          //checamos se disponibilidade corresponde ao tamanho desejado
+        throw invalid_argument("Disponibilidade invalida");          //checamos se disponibilidade corresponde ao tamanho desejado
     }
     else if(novo_disponibilidade < LIMITE_INFERIOR){
-        throw invalid_argument("numero_invalido");
+        throw invalid_argument("Disponibilidade invalida");
     }
 
 }
@@ -560,7 +561,7 @@ void Nome_de_Evento::validar(string novo_nome_evento) throw (invalid_argument){
 
 
     if((SUCESSO != 0) || (string_contem_letra == 1)){
-        throw invalid_argument("nome invalido");
+        throw invalid_argument("Nome de evento invalido");
     }
 
 }
@@ -572,7 +573,7 @@ void Data::setData(string nova_data) throw (invalid_argument){
 
     int data_int = 0;
 
-    int i;
+    //int i;
 
     data_int = ((nova_data[5] - 48) + ((nova_data[4] - 48) *10) + ((nova_data[3] - 48)*100) + ((nova_data[2] - 48) * 1000) + ((nova_data[1] - 48) * 10000) + ((nova_data[0] - 48) * 100000)  );
 
@@ -633,7 +634,7 @@ void Data::validar(int data_int) throw (invalid_argument){
 
 
     if(SUCESSO != 0){
-        throw invalid_argument("data invalida");
+        throw invalid_argument("Data de evento invalida");
     }
 
 }
@@ -656,7 +657,7 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
     int SUCESSO = 0;
     char aux;
     char aux2;
-    int string_contem_letra = 1;
+    //int string_contem_letra = 1;
     int i;
     int tamanho_real_palavra;
     int tem_letra = 1;
@@ -700,7 +701,7 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
     }
 
     if((SUCESSO != 0)){
-        throw invalid_argument("cidade invalida");
+        throw invalid_argument("Cidade invalida");
     }
 
 }

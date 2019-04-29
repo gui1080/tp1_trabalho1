@@ -156,7 +156,10 @@ public:
 
 class Estados_Brasileiros {
 private:
-        string estado_br;
+
+        const static int FORMATO_ESPERADO = 2;
+
+        char estado_br[FORMATO_ESPERADO];
 
         // temos que checar se o estado existe
         // suponho que siglas de estado se escrevem em letras maiusculas
@@ -203,7 +206,10 @@ public:
 
 class Faixa_Etaria{
 private:
-        char faixa_etaria[2];
+
+        const static int FORMATO_ESPERADO = 2;
+
+        char faixa_etaria[FORMATO_ESPERADO];
 
         // L, 10, 12, 14, 16 OU 18
 
@@ -357,9 +363,10 @@ public:
 
 class Nome_de_Evento {
 private:
-        char nome_evento[20];
 
         const static int LIMITE = 20;
+
+        char nome_evento[LIMITE];
 
         // temos que checar se o nome tem 20 caracteres, pelo menos 1 letra
         // não pode ter varios espaços vazios em seguida
@@ -401,6 +408,9 @@ public:
 
         string getData () {
             return data;
+        }
+        void printData(){
+            cout << "ta aqui a data na classe" << data << endl;
         }
 };
 

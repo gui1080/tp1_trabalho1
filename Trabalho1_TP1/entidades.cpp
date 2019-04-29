@@ -45,7 +45,7 @@ void Cartao_de_credito::getCartao_de_credito(Numero_Cartao_Credito *numero_f, Co
     numero_f->setNumero_Cartao_Credito(this->numero.getNumero_Cartao_Credito());
 
     codigo_f->setCodigo_de_Seguranca_Cartao_Credito(this->codigo.getCodigo_de_Seguranca_Cartao_Credito());
-    cout << this->codigo.getCodigo_de_Seguranca_Cartao_Credito() << endl;
+
     data_f->setData_Validade_Cartao_Credito(this->data.getData_Validade_Cartao_Credito());
 
     return;
@@ -55,14 +55,13 @@ void Cartao_de_credito::getCartao_de_credito(Numero_Cartao_Credito *numero_f, Co
 void Evento::setEvento(int novo_codigo, string novo_nome, string novo_cidade, string novo_estado,
                 int novo_classe, string novo_faixa) throw (invalid_argument){
 
-cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 codigo.setCodigo_de_Evento(novo_codigo);
 //nome.setNome_de_Evento(novo_nome);
 //cidade.setCidade(novo_cidade);
 estado.setEstado(novo_estado);
 classe.setClasse_Evento(novo_classe);
 faixa.setFaixa_Etaria(novo_faixa);
-cout << "--------------------------------------------------------------" << endl;
+
 }
 
 void Evento::getEvento(Codigo_de_Evento *codigo_f, Nome_de_Evento *nome_f, Cidade *cidade_f, Estados_Brasileiros *estado_f,
@@ -103,6 +102,8 @@ void Apresentacao::getApresentacao(Codigo_de_Apresentacao *codigo_f, Data *data_
 
     codigo_f->setCodigo_de_Apresentacao(this->codigo.getCodigo_de_Apresentacao());
     data_f->setData(this->data.getData());
+    cout << "-------------------------------------------------------------------------------" << endl;
+    cout << this->data.getData()  << endl << endl;
     horario_f->setHorario(this->horario.getHorario());
     preco_f->setPreco(this->preco.getPreco());
     sala_f->setNumero_de_Sala(this->sala.getNumero_de_Sala());
