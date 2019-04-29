@@ -1,3 +1,13 @@
+/**
+ * @file testes.cpp
+ *
+ * @brief Arquivo com a implementação dos testes do programa
+ *
+ * @author Gabriel e Guilherme
+ *
+ */
+
+
 #include "testes.h"
 #include <iostream>
 
