@@ -9,7 +9,11 @@ Data final de entrega: 30/04/2019
 # Alunos
 Gabriel Matheus - 17/0103498
 
+https://github.com/Shudugen
+
 Guilherme Braga - 17/0162290
+
+https://github.com/therealguib545
 
 # Material da matéria
 https://cic.unb.br/~fernando/matdidatico/intro.htm
