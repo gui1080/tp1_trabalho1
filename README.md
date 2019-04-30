@@ -30,4 +30,4 @@ HTML e documentação das classes feitos com Doxygen.
 
 # Observações relacionadas ao código:
 
-Feito em Code::Blocks no Windows 10 por requisito da materia.
+Feito em Code::Blocks no Windows 10 por requisito da matéria.
