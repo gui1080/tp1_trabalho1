@@ -1,6 +1,6 @@
 # Trabalho 1 de Técnicas de Programação 1  
 Professor: Fernando Antonio de Araújo Chacon de Albuquerque
-Data final de entrega:
+Data final de entrega: 30/04/2019
 1/2019, UnB
 
 # Alunos
@@ -14,4 +14,9 @@ https://cic.unb.br/~fernando/matdidatico/intro.htm
 # Link do Github
 https://github.com/therealguib545/tp1_trabalho1
 
+# UML 
+Feito com a ferramenta aberta Umbrello em Linux.
+
 # Observações relacionadas ao código:
+
+Feito em Code::Blocks no Windows 10 por requisito da materia.
