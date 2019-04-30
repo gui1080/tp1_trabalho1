@@ -79,7 +79,7 @@
 	"testes.h"
 	<iostream>
 
-1556545066 source:c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\main.cpp
+1556587290 source:c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\main.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -92,13 +92,13 @@
 	"testes.h"
 	"testes.cpp"
 
-1556571565 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\dominios.h
+1556568888 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\dominios.h
 	<stdexcept>
 	<iostream>
 	<string>
 	<stdlib.h>
 
-1556571991 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\dominios.cpp
+1556587570 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\dominios.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -107,18 +107,18 @@
 	<ctype.h>
 	"dominios.h"
 
-1556569772 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\entidades.h
+1556568888 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\entidades.h
 	"dominios.h"
 	<string>
 
-1556572168 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\entidades.cpp
+1556587647 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\entidades.cpp
 	"dominios.h"
 	<string>
 	<iostream>
 
-1556566007 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\testes.h
+1556568888 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\testes.h
 
-1556571370 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\testes.cpp
+1556588001 c:\users\shudu\desktop\tp1_trabalho1-masterf2\trabalho1_tp1\testes.cpp
 	"testes.h"
 	<iostream>
 

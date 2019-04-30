@@ -14,9 +14,6 @@
 const string TUSenha::SENHA_VALIDA ("pAa2O3");
 const string TUSenha::SENHA_INVALIDA ("12345");
 
-//const string TUData::DATA_VALIDA ("121220");
-//const string TUData::DATA_INVALIDA ("777777");
-
 using namespace std;
 
 void TUCodigo_de_Evento::setUp(){
@@ -793,7 +790,6 @@ void TUHorario::tearDown(){
 }
 void TUHorario::testarCenarioSucesso(){
 
-    //string VALOR_VALIDO ("08:15");
     cout << "Testando caso de sucesso" << endl;
 
     try{
@@ -808,7 +804,6 @@ void TUHorario::testarCenarioSucesso(){
 }
 void TUHorario::testarCenarioFalha(){
 
-    //string VALOR_INVALIDO ("34:72");
     cout << "Testando caso de falha" << endl;
 
     try{
@@ -952,13 +947,12 @@ void TUCartao_de_credito::testarCenarioSucesso(){
 
         resultado_numero = teste_numero.getNumero_Cartao_Credito();
         resultado_codigo_seguranca = teste_codigo_segu.getCodigo_de_Seguranca_Cartao_Credito();
-        cout << "resultado do codigo -> " << teste_codigo_segu.getCodigo_de_Seguranca_Cartao_Credito() << endl;
         resultado_data = teste_data.getData_Validade_Cartao_Credito();
 
         if (
-            resultado_numero != VALOR_VALIDO_N_CARTAO_CREDITO ||
-            teste_codigo_segu.getCodigo_de_Seguranca_Cartao_Credito() != VALOR_VALIDO_COD_SEGURANCA ||
-            resultado_data != VALOR_VALIDO_DATA_VALIDADE)
+            resultado_numero           !=  VALOR_VALIDO_N_CARTAO_CREDITO ||
+            resultado_codigo_seguranca !=  VALOR_VALIDO_COD_SEGURANCA ||
+            resultado_data             !=  VALOR_VALIDO_DATA_VALIDADE)
             estado = FALHA;
     }
 
@@ -1093,8 +1087,8 @@ void TUEvento::testarCenarioSucesso(){
     Classe_Evento teste_classe;
     Faixa_Etaria teste_faixa;
 
-    string VALOR_VALIDO_NOME = "Show da Hatsune";
-    string VALOR_VALIDO_CIDADE = "Uberaba";
+    string VALOR_VALIDO_NOME = "Show da Hatsune Miku";
+    string VALOR_VALIDO_CIDADE = "Brasilia";
     string VALOR_VALIDO_ESTADOS = "MA";
     string VALOR_VALIDO_FAIXA = "18";
 
@@ -1108,13 +1102,6 @@ void TUEvento::testarCenarioSucesso(){
 try{
         evento_teste->setEvento(VALOR_VALIDO_C_EVENTO, VALOR_VALIDO_NOME, VALOR_VALIDO_CIDADE,
                                 VALOR_VALIDO_ESTADOS, VALOR_VALIDO_CLASSE_EVENTO, VALOR_VALIDO_FAIXA);
-
-        cout << VALOR_VALIDO_C_EVENTO << endl;
-        cout << VALOR_VALIDO_NOME << endl;
-        cout << VALOR_VALIDO_CIDADE << endl;
-        cout << VALOR_VALIDO_ESTADOS << endl;
-        cout << VALOR_VALIDO_CLASSE_EVENTO << endl;
-        cout << VALOR_VALIDO_FAIXA << endl;
 
         evento_teste->getEvento(&teste_codigo, &teste_nome, &teste_cidade, &teste_estado, &teste_classe, &teste_faixa);
 
@@ -1160,7 +1147,7 @@ int TUEvento::run(){
 void TUApresentacao::setUp(){
     apresentacao_teste = new Apresentacao();
     estado = SUCESSO;
-    cout << endl << "Inicializando teste de apesentacao" << endl;
+    cout << endl << "Inicializando teste de apresentacao" << endl;
 }
 void TUApresentacao::tearDown(){
     delete apresentacao_teste;
@@ -1189,16 +1176,13 @@ void TUApresentacao::testarCenarioSucesso(){
 
     try{
 
-        //cout << VALOR_VALIDO_N_CARTAO_CREDITO << endl << VALOR_VALIDO_COD_SEGURANCA << endl << VALOR_VALIDO_DATA_VALIDADE << endl;
         apresentacao_teste->setApresentacao(VALOR_VALIDO_C_APRESENTACAO, VALOR_VALIDO_DATA, VALOR_VALIDO_HORARIO,
                                 VALOR_VALIDO_PRECO, VALOR_VALIDO_SALA, VALOR_VALIDO_DISPONIBILIDADE);
         apresentacao_teste->getApresentacao(&teste_codigo, &teste_data, &teste_horario, &teste_preco, &teste_sala, &teste_disponibilidade);
 
         resultado_codigo = teste_codigo.getCodigo_de_Apresentacao();
         resultado_data = teste_data.getData();
-        //teste_data.printData();
-        cout << "-------------------------------------------------" << endl;
-        cout << "era pra ta aqui " << resultado_data << " mas n esta " << VALOR_VALIDO_DATA <<  endl;
+
         resultado_horario = teste_horario.getHorario();
         resultado_preco = teste_preco.getPreco();
         resultado_sala = teste_sala.getNumero_de_Sala();

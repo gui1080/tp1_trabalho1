@@ -197,7 +197,6 @@ void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument
         || (novo_estado_br.compare("RO") == SUCESSO) || (novo_estado_br.compare("RR") == SUCESSO) || (novo_estado_br.compare("SC") == SUCESSO)
         || (novo_estado_br.compare("SP") == SUCESSO) || (novo_estado_br.compare("SE") == SUCESSO) || (novo_estado_br.compare("TO") == SUCESSO) ) {
 
-        // cout << "estado valido";
     }
     else{
         throw invalid_argument("estado invalido");
@@ -234,13 +233,10 @@ void Faixa_Etaria::setFaixa_Etaria(string novo_faixa_etaria) throw (invalid_argu
 }
 void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
 
-    //string aux;
     int IGUAL = 0;
-    //int size = strlen(novo_faixa_etaria);
 
     if(novo_faixa_etaria.compare("L") == IGUAL || novo_faixa_etaria.compare("10") == IGUAL || novo_faixa_etaria.compare("12") == IGUAL
        || novo_faixa_etaria.compare("14") == IGUAL ||novo_faixa_etaria.compare("16") == IGUAL || novo_faixa_etaria.compare("18") == IGUAL){
-
 
     } else{
         throw invalid_argument("Faixa Etaria invalida");
@@ -282,7 +278,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     do{
         array_novo_num_cpf[i] = (novo_num_cpf % 10);
         novo_num_cpf /= 10;
-        i--;///////
+        i--;
     } while  (novo_num_cpf > 0);
 
     j = 10;
@@ -313,23 +309,6 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     else{
         digitoverificador2=(11-aux2);
     }
-
-    //cout <<(aux1);
-
-
-    //int x = digitoverificador1;
-    //int y = novo_num_cpf[9];
-
-    //cout << x;
-    //cout << "\n";
-    //cout << y;
-    //cout << "\n\n";
-    //cout << digitoverificador2;
-    //cout << "\n";
-    //cout << novo_num_cpf[10];
-    //cout << "\n\n\n";
-    //ta indo agr
-
 
     if( ((array_novo_num_cpf[9]) != (digitoverificador1)) || ((array_novo_num_cpf[10]) != (digitoverificador2) )){
         SUCESSO = 1;
@@ -459,11 +438,11 @@ void Data_Validade_Cartao_Credito::setData_Validade_Cartao_Credito(string novo_d
 
     while(k < TAMANHO_ESPERADO){
         data_validade[k] = novo_data_validade[k];
-        //cout << data_validade[k] << endl;
+
         k++;
     }
     data_validade[TAMANHO_ESPERADO] = '\0';
-    //cout << data_validade << endl;
+
 }
 void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (invalid_argument){
 
@@ -532,11 +511,12 @@ void Nome_de_Evento::setNome_de_Evento(string novo_nome_evento) throw (invalid_a
     validar(novo_nome_evento);
     int j;
 
-    for(j= 0; j<20 ; j++){
+    for(j= 0; j < LIMITE ; j++){
         nome_evento[j] = novo_nome_evento[j]; //copiamos a nova entrada e definimos seu limite
+
     }
 
-    nome_evento[20] = '\0';
+    nome_evento[LIMITE] = '\0';
 
 }
 void Nome_de_Evento::validar(string novo_nome_evento) throw (invalid_argument){
@@ -547,11 +527,11 @@ void Nome_de_Evento::validar(string novo_nome_evento) throw (invalid_argument){
     char char_atual;
     char char_anterior;
 
-    if(novo_nome_evento[20] != '\0'){         //checamos o tamanho da string
+    if(novo_nome_evento[LIMITE] != '\0'){         //checamos o tamanho da string
         SUCESSO = 1;
     }
 
-    while(i < 20){
+    while(i < LIMITE){
 
         char_atual = novo_nome_evento[i];                 //checamos espacos vazios seguidos
 
@@ -582,8 +562,6 @@ void Data::setData(string nova_data) throw (invalid_argument){
 
     int data_int = 0;
 
-    //int i;
-
     data_int = ((nova_data[5] - 48) + ((nova_data[4] - 48) *10) + ((nova_data[3] - 48)*100) + ((nova_data[2] - 48) * 1000) + ((nova_data[1] - 48) * 10000) + ((nova_data[0] - 48) * 100000)  );
 
     validar(data_int);
@@ -612,12 +590,8 @@ void Data::validar(int data_int) throw (invalid_argument){
     num_dia = data_int % 100;
     data_int = data_int/100;
 
-    //cout<< num_dia;
-
     num_mes = data_int % 100;
     data_int = data_int/100;
-
-    //cout<< num_mes;
 
     num_ano = data_int%100;
     data_int = data_int/100;
@@ -666,7 +640,6 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
     int SUCESSO = 0;
     char aux;
     char aux2;
-    //int string_contem_letra = 1;
     int i;
     int tamanho_real_palavra;
     int tem_letra = 1;
@@ -675,8 +648,6 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
 
     i = 0;
     while(i < tamanho_real_palavra){
-
-        //char_atual = nova_cidade[i];
 
         if((isalpha(nova_cidade[i]))){
             tem_letra = 0;   //checamos se existem letras e nao apenas caracteres invalidos
@@ -700,8 +671,6 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
                 SUCESSO = 1;
             }
         }
-
-
         i++;
     }
 
@@ -714,7 +683,3 @@ void Cidade::validar(string nova_cidade) throw (invalid_argument){
     }
 
 }
-
-
-
-
