@@ -17,6 +17,10 @@ https://github.com/therealguib545/tp1_trabalho1
 # UML 
 Feito com a ferramenta aberta Umbrello em Linux.
 
+# Documentação
+Mapas conceituais feitos com FreeMind.
+HTML e documentação das classes feitos com Doxygen.
+
 # Observações relacionadas ao código:
 
 Feito em Code::Blocks no Windows 10 por requisito da materia.
