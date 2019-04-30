@@ -524,14 +524,13 @@ void Nome_de_Evento::validar(string novo_nome_evento) throw (invalid_argument){
     int SUCESSO = 0;
     int i = 0;
     int string_contem_letra = 1;
+    int tamanho_real_palavra;
     char char_atual;
     char char_anterior;
 
-    if(novo_nome_evento[LIMITE] != '\0'){         //checamos o tamanho da string
-        SUCESSO = 1;
-    }
+    tamanho_real_palavra = novo_nome_evento.size();
 
-    while(i < LIMITE){
+    while(i < tamanho_real_palavra){
 
         char_atual = novo_nome_evento[i];                 //checamos espacos vazios seguidos
 

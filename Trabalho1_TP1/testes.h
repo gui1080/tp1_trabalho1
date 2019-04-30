@@ -25,8 +25,8 @@ class TUCodigo_de_Evento {
 
 private:
 
-    const static int VALOR_VALIDO   = 123;
-    const static int VALOR_INVALIDO = 1234;
+    const static int VALOR_VALIDO   = 732;
+    const static int VALOR_INVALIDO = 1985;
 
 
     Codigo_de_Evento *codigo_evento_teste;
@@ -52,8 +52,8 @@ class TUCodigo_de_Apresentacao {
 
 private:
 
-    const static int VALOR_VALIDO   = 1234;
-    const static int VALOR_INVALIDO = 12345;
+    const static int VALOR_VALIDO   = 7983;
+    const static int VALOR_INVALIDO = 23409;
 
 
     Codigo_de_Apresentacao *codigo_apresentacao_teste;
@@ -79,8 +79,8 @@ class TUCodigo_de_Ingresso {
 
 private:
 
-    const static int VALOR_VALIDO   = 12345;
-    const static int VALOR_INVALIDO = 123456;
+    const static int VALOR_VALIDO   = 18793;
+    const static int VALOR_INVALIDO = 543870;
 
 
     Codigo_de_Ingresso *codigo_ingresso_teste;
@@ -130,7 +130,7 @@ class TUNumero_de_Sala {
 private:
 
     const static int VALOR_VALIDO   = 3;
-    const static int VALOR_INVALIDO = 34;
+    const static int VALOR_INVALIDO = 16;
 
 
     Numero_de_Sala *numero_de_sala_teste;
@@ -156,7 +156,7 @@ class TUPreco {
 
 private:
 
-    const static int VALOR_VALIDO   = 765;
+    const static float VALOR_VALIDO   = 765.50;
     const static int VALOR_INVALIDO = 34987;
 
 
@@ -287,8 +287,8 @@ class TUDisponibilidade {
 
 private:
 
-    const static int VALOR_VALIDO   = 123;
-    const static int VALOR_INVALIDO = 7777;
+    const static int VALOR_VALIDO   = 165;
+    const static int VALOR_INVALIDO = 300;
 
     Disponibilidade *disp_teste;
 
@@ -489,9 +489,7 @@ class TUIngresso {
 
 private:
 
-    const static int VALOR_VALIDO   = 12345;
-    const static int VALOR_INVALIDO = 123456;
-
+    const static int VALOR_VALIDO   = 78943;
 
     Ingresso *ingresso_teste;
 
@@ -500,7 +498,6 @@ private:
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
-    void testarCenarioFalha();
 
 public:
 
@@ -517,9 +514,7 @@ class TUCartao_de_credito {
 private:
 
     const static long long int VALOR_VALIDO_N_CARTAO_CREDITO = 30211944335337;
-    const static long long int VALOR_INVALIDO_N_CARTAO_CREDITO = 77777777777777;
-    const static int VALOR_VALIDO_COD_SEGURANCA = 123;
-    const static int VALOR_INVALIDO_COD_SEGURANCA =4567;
+    const static int VALOR_VALIDO_COD_SEGURANCA = 387;
 
     Cartao_de_credito *cartao_de_credito_teste;
 
@@ -528,7 +523,6 @@ private:
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
-    void testarCenarioFalha();
 
 public:
 
@@ -545,7 +539,6 @@ class TUUsuario {
 private:
 
     const static long long int VALOR_VALIDO_CPF = 69386992086;
-    const static long long int VALOR_INVALIDO_CPF = 00000000000;
 
     Usuario *usuario_teste;
 
@@ -554,7 +547,6 @@ private:
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
-    void testarCenarioFalha();
 
 public:
 
@@ -571,9 +563,7 @@ class TUEvento {
 private:
 
     const static int VALOR_VALIDO_C_EVENTO = 365;
-    const static int VALOR_INVALIDO_C_EVENTO = 8765;
     const static int VALOR_VALIDO_CLASSE_EVENTO = 3;
-    const static int VALOR_INVALIDO_CLASSE_EVENTO = 45;
 
     Evento *evento_teste;
 
@@ -582,7 +572,6 @@ private:
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
-    void testarCenarioFalha();
 
 public:
 
@@ -599,13 +588,9 @@ class TUApresentacao {
 private:
 
     const static int VALOR_VALIDO_C_APRESENTACAO = 3655;
-    const static int VALOR_INVALIDO_C_APRESENTACAO = 876565;
     const static float VALOR_VALIDO_PRECO = 3.45;
-    const static float VALOR_INVALIDO_PRECO = 459876;
     const static int VALOR_VALIDO_SALA = 7;
-    const static int VALOR_INVALIDO_SALA = 19;
     const static int VALOR_VALIDO_DISPONIBILIDADE = 45;
-    const static int VALOR_INVALIDO_DISPONIBILIDADE = 300;
 
     Apresentacao *apresentacao_teste;
 
@@ -614,7 +599,6 @@ private:
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
-    void testarCenarioFalha();
 
 public:
 

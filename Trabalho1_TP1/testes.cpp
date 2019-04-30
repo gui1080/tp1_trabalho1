@@ -12,7 +12,7 @@
 #include <iostream>
 
 const string TUSenha::SENHA_VALIDA ("pAa2O3");
-const string TUSenha::SENHA_INVALIDA ("12345");
+const string TUSenha::SENHA_INVALIDA ("1BA49O");
 
 using namespace std;
 
@@ -55,7 +55,7 @@ void TUCodigo_de_Evento::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "1234 nao pode ser um Codigo de Evento" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser um Codigo de Evento" << endl;
         return;
     }
 }
@@ -109,7 +109,7 @@ void TUCodigo_de_Apresentacao::testarCenarioFalha(){
     }
     catch(invalid_argument excecao){
 
-        cout << "12345 nao pode ser um Codigo de Apresentacao" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser um Codigo de Apresentacao" << endl;
 
         return;
     }
@@ -163,7 +163,7 @@ void TUCodigo_de_Ingresso::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "123456 nao pode ser um Codigo de Ingresso" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser um Codigo de Ingresso" << endl;
         return;
     }
 }
@@ -220,7 +220,7 @@ void TUEstados_Brasileiros::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "PF nao representa um Estado Brasileiro" << endl;
+        cout << VALOR_INVALIDO << " nao representa um Estado Brasileiro" << endl;
         return;
     }
 }
@@ -269,7 +269,7 @@ void TUNumero_de_Sala::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "34 e uma sala invalida" << endl;
+        cout << VALOR_INVALIDO << " e uma sala invalida" << endl;
         return;
     }
 }
@@ -318,7 +318,7 @@ void TUPreco::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "34987 nao pode ser um Preco" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser um Preco" << endl;
         return;
     }
 }
@@ -367,7 +367,7 @@ void TUClasse_Evento::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "9 nao pode ser uma Classe de Evento" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser uma Classe de Evento" << endl;
         return;
     }
 }
@@ -416,7 +416,7 @@ void TUCodigo_de_Seguranca_Cartao_Credito::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "1234 nao pode ser um Numero de Cartao de Credito" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser um Numero de Cartao de Credito" << endl;
         return;
     }
 }
@@ -465,7 +465,7 @@ void TUNumero_Cartao_Credito::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "77777777777777 nao pode ser um Numero de Cartao de Credito" << endl;
+        cout << VALOR_INVALIDO <<  " nao pode ser um Numero de Cartao de Credito" << endl;
         return;
     }
 }
@@ -514,7 +514,7 @@ void TUDisponibilidade::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "7777 nao pode ser uma Disponibilidade" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser uma Disponibilidade" << endl;
         return;
     }
 }
@@ -558,11 +558,11 @@ void TUData_Validade_Cartao_Credito::testarCenarioFalha(){
     cout << "Testando caso de falha" << endl;
 
     try{
-        val_teste->setData_Validade_Cartao_Credito("kkkkk");
+        val_teste->setData_Validade_Cartao_Credito("32/87");
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "kkkkk nao pode ser Data de Validade de Cartao de Credito" << endl;
+        cout << "32/87 nao pode ser Data de Validade de Cartao de Credito" << endl;
         return;
     }
 }
@@ -608,14 +608,14 @@ void TUCPF::testarCenarioFalha(){
 
     cout << "Testando caso de falha" << endl;
 
-    long long int VALOR_INVALIDO = 00000000000;
+    long long int VALOR_INVALIDO = 12345678901;
 
     try{
         cpf_teste->setCPF(VALOR_INVALIDO);
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "00000000000 nao pode ser um CPF valido" << endl;
+        cout << VALOR_INVALIDO << " nao pode ser um CPF valido" << endl;
         return;
     }
 }
@@ -665,7 +665,7 @@ void TUSenha::testarCenarioFalha(){
         estado = FALHA;
     }
     catch(invalid_argument excecao){
-        cout << "12345 nao pode ser senha" << endl;
+        cout << SENHA_INVALIDA << " nao pode ser senha" << endl;
         return;
     }
 }
@@ -1087,7 +1087,7 @@ void TUEvento::testarCenarioSucesso(){
     Classe_Evento teste_classe;
     Faixa_Etaria teste_faixa;
 
-    string VALOR_VALIDO_NOME = "Show da Hatsune Miku";
+    string VALOR_VALIDO_NOME = "Show da Hatsune";
     string VALOR_VALIDO_CIDADE = "Brasilia";
     string VALOR_VALIDO_ESTADOS = "MA";
     string VALOR_VALIDO_FAIXA = "18";
