@@ -27,6 +27,7 @@ Feito com a ferramenta aberta Umbrello em Linux.
 # Documentação
 Mapas conceituais feitos com FreeMind.
 HTML e documentação das classes feitos com Doxygen.
+Para ver o HTML, clicar em "annotaded", na pasta de HTML.
 
 # Observações relacionadas ao código:
 
