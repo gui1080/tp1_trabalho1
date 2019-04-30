@@ -37,7 +37,7 @@ void Codigo_de_Evento::setCodigo_de_Evento(int novo_codigo_de_evento) throw (inv
 }
 void Codigo_de_Evento::validar(int novo_codigo_de_evento) throw (invalid_argument){
 
-    if(novo_codigo_de_evento > LIMITE){
+    if(novo_codigo_de_evento > LIMITE){                               //checa se esta dentro do limite
         throw invalid_argument("Codigo de evento invalido");
     }
 
@@ -53,7 +53,7 @@ void Codigo_de_Apresentacao::setCodigo_de_Apresentacao(int novo_codigo_de_aprese
 }
 void Codigo_de_Apresentacao::validar(int novo_codigo_de_apresentacao) throw (invalid_argument){
 
-    if(novo_codigo_de_apresentacao > LIMITE){
+    if(novo_codigo_de_apresentacao > LIMITE){                                        //checa se esta dentro do limite
         throw invalid_argument("Codigo de apresentacao invalido");
     }
 
@@ -71,7 +71,7 @@ void Codigo_de_Ingresso::validar(int novo_codigo_de_ingresso) throw (invalid_arg
 
     if(novo_codigo_de_ingresso > LIMITE){
         //cout << novo_codigo_de_ingresso << endl;
-        throw invalid_argument("Codigo de ingresso acima do limite");
+        throw invalid_argument("Codigo de ingresso acima do limite");             //checa se esta dentro do limite
     }
 
 }
@@ -86,7 +86,7 @@ void Horario::setHorario(string novo_horario) throw (invalid_argument){
     int k = 0;
 
     while(k < FORMATO_ESPERADO){
-        horario[k] = novo_horario[k];
+        horario[k] = novo_horario[k];                   // atribui corretamente
         k++;
     }
     horario[FORMATO_ESPERADO] = '\0';
@@ -116,7 +116,7 @@ void Horario::validar(string novo_horario) throw (invalid_argument){
     MM[2] = '\0';
     MMaux = atoi(MM);
 
-    if(novo_horario[2] != ':'){
+    if(novo_horario[2] != ':'){                    //checamos caracteres invalidos e se os numeros dados podem responder a horas, minutos ou segundos
 
     throw invalid_argument("Formato invalido de horario");
     }
@@ -146,7 +146,7 @@ void Numero_de_Sala::setNumero_de_Sala(int novo_numero_de_sala) throw (invalid_a
 void Numero_de_Sala::validar(int novo_numero_de_sala) throw (invalid_argument){
 
     if(novo_numero_de_sala >= LIMITE_SUPERIOR){
-        throw invalid_argument("Numero de sala acima do limite superior");
+        throw invalid_argument("Numero de sala acima do limite superior");             //checa se esta dentro do limite
     }
     else if(novo_numero_de_sala <= LIMITE_INFERIOR){
         throw invalid_argument("Numero de sala abaixo do limite inferior");
@@ -164,7 +164,7 @@ void Preco::setPreco(float novo_preco) throw (invalid_argument){
 }
 void Preco::validar(float novo_preco) throw (invalid_argument){
 
-    if(novo_preco > LIMITE_SUPERIOR){
+    if(novo_preco > LIMITE_SUPERIOR){                                                //checa se esta dentro do limite
         throw invalid_argument("Preco acima do limite superior");
     }
     else if(novo_preco < LIMITE_INFERIOR){
@@ -192,7 +192,7 @@ void Estados_Brasileiros::validar(string novo_estado_br) throw (invalid_argument
         || (novo_estado_br.compare("DF") == SUCESSO) || (novo_estado_br.compare("ES") == SUCESSO) || (novo_estado_br.compare("GO") == SUCESSO)
         || (novo_estado_br.compare("MA") == SUCESSO) || (novo_estado_br.compare("MT") == SUCESSO) || (novo_estado_br.compare("MS") == SUCESSO)
         || (novo_estado_br.compare("MG") == SUCESSO) || (novo_estado_br.compare("PA") == SUCESSO) || (novo_estado_br.compare("PB") == SUCESSO)
-        || (novo_estado_br.compare("PR") == SUCESSO) || (novo_estado_br.compare("PE") == SUCESSO) || (novo_estado_br.compare("PI") == SUCESSO)
+        || (novo_estado_br.compare("PR") == SUCESSO) || (novo_estado_br.compare("PE") == SUCESSO) || (novo_estado_br.compare("PI") == SUCESSO)                         //checa se o estado existe
         || (novo_estado_br.compare("RJ") == SUCESSO) || (novo_estado_br.compare("RN") == SUCESSO) || (novo_estado_br.compare("RS") == SUCESSO)
         || (novo_estado_br.compare("RO") == SUCESSO) || (novo_estado_br.compare("RR") == SUCESSO) || (novo_estado_br.compare("SC") == SUCESSO)
         || (novo_estado_br.compare("SP") == SUCESSO) || (novo_estado_br.compare("SE") == SUCESSO) || (novo_estado_br.compare("TO") == SUCESSO) ) {
@@ -216,7 +216,7 @@ void Classe_Evento::validar(int novo_classe_evento) throw (invalid_argument){
     int Num_Opcoes_Evento = 4;
 
     if(novo_classe_evento < 0 || novo_classe_evento > Num_Opcoes_Evento){
-        throw invalid_argument("opcao de classe de evento nao existe");
+        throw invalid_argument("opcao de classe de evento nao existe");                              //checa se a opcao dada existe
     }
 
 }
@@ -228,14 +228,14 @@ void Faixa_Etaria::setFaixa_Etaria(string novo_faixa_etaria) throw (invalid_argu
     validar(novo_faixa_etaria);
 
     faixa_etaria[0] = novo_faixa_etaria[0];
-    faixa_etaria[1] = novo_faixa_etaria[1];
+    faixa_etaria[1] = novo_faixa_etaria[1];            //atribui valores corretamente
     faixa_etaria[FORMATO_ESPERADO] = '\0';
 }
 void Faixa_Etaria::validar(string novo_faixa_etaria) throw (invalid_argument){
 
     int IGUAL = 0;
 
-    if(novo_faixa_etaria.compare("L") == IGUAL || novo_faixa_etaria.compare("10") == IGUAL || novo_faixa_etaria.compare("12") == IGUAL
+    if(novo_faixa_etaria.compare("L") == IGUAL || novo_faixa_etaria.compare("10") == IGUAL || novo_faixa_etaria.compare("12") == IGUAL             //checa se a faixa dada existe
        || novo_faixa_etaria.compare("14") == IGUAL ||novo_faixa_etaria.compare("16") == IGUAL || novo_faixa_etaria.compare("18") == IGUAL){
 
     } else{
@@ -276,7 +276,7 @@ void CPF::validar(long long int novo_num_cpf) throw (invalid_argument){
     }
 
     do{
-        array_novo_num_cpf[i] = (novo_num_cpf % 10);
+        array_novo_num_cpf[i] = (novo_num_cpf % 10);             // verifica o algoritmo de cpf
         novo_num_cpf /= 10;
         i--;
     } while  (novo_num_cpf > 0);
@@ -352,7 +352,7 @@ void Senha::validar(string novo_classe_senha) throw (invalid_argument){
             aux = novo_classe_senha[i];
             for(j = i; j > 0; j--){
                 if(aux == novo_classe_senha[j - 1])
-                    throw invalid_argument("A senha possuiu caracteres repetidos");
+                    throw invalid_argument("A senha possuiu caracteres repetidos");         //checamos se a senha apresenta o que foi pedido
             }
         }
 
@@ -385,7 +385,7 @@ void Codigo_de_Seguranca_Cartao_Credito::setCodigo_de_Seguranca_Cartao_Credito(i
 }
 void Codigo_de_Seguranca_Cartao_Credito::validar(int novo_codigo_de_seguranca) throw (invalid_argument){
 
-    if(novo_codigo_de_seguranca > LIMITE || novo_codigo_de_seguranca < 0){
+    if(novo_codigo_de_seguranca > LIMITE || novo_codigo_de_seguranca < 0){          //checamos os limites
         throw invalid_argument("codigo de seguranca do cartao invalido");
     }
 
@@ -415,7 +415,7 @@ void Numero_Cartao_Credito::validar(string novo_num_cartao_credito) throw (inval
 
       int nDigit = atoi(cDigit);
 
-      if (nParity == i % 2)
+      if (nParity == i % 2)                    // checamos o algoritmo de validacao
         nDigit = nDigit * 2;
 
       nSum += nDigit/10;
@@ -462,7 +462,7 @@ void Data_Validade_Cartao_Credito::validar(string novo_data_validade) throw (inv
     XX[2] = '\0';
     XXaux = atoi(XX);
 
-    for(j = 3; j < TAMANHO_ESPERADO; j++){
+    for(j = 3; j < TAMANHO_ESPERADO; j++){              // vemos se a data corresponde ao que foi pedido, por exemplo, 54 não pode ser um dia
         YY[j-3] = novo_data_validade[j];
     }
     YY[2] = '\0';
