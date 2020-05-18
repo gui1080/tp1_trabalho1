@@ -13,13 +13,13 @@ https://github.com/Shudugen
 
 Guilherme Braga - 17/0162290
 
-https://github.com/therealguib545
+https://github.com/gui1080
 
 # Material da matéria
 https://cic.unb.br/~fernando/matdidatico/intro.htm
 
 # Link do Github
-https://github.com/therealguib545/tp1_trabalho1
+https://github.com/gui1080/tp1_trabalho1
 
 # UML 
 Feito com a ferramenta aberta Umbrello em Linux.
